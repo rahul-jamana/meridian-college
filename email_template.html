@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8fafc; margin: 0; padding: 20px; color: #1e293b; }
+        .container { max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; }
+        .header { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); padding: 30px 20px; text-align: center; color: white; }
+        .header h1 { margin: 0; font-size: 24px; font-weight: 700; letter-spacing: 1px; }
+        .header p { margin: 5px 0 0; font-size: 14px; opacity: 0.9; }
+        .hero-img { width: 100%; height: 200px; object-fit: cover; border-bottom: 3px solid #eab308; }
+        .content { padding: 30px; }
+        .greeting { font-size: 20px; font-weight: bold; margin-bottom: 15px; color: #0f172a; }
+        .message { font-size: 15px; line-height: 1.6; color: #475569; margin-bottom: 25px; }
+        .details-box { background: #f1f5f9; border-left: 4px solid #3b82f6; padding: 20px; border-radius: 4px; margin-bottom: 25px; }
+        .details-box h3 { margin: 0 0 10px; font-size: 16px; color: #1e293b; }
+        .details-box p { margin: 5px 0; font-size: 14px; color: #475569; }
+        .details-box strong { color: #0f172a; }
+        .cta-box { text-align: center; margin-top: 30px; }
+        .btn { display: inline-block; padding: 12px 25px; background-color: #1e3a8a; color: #ffffff; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 15px; }
+        .footer { background: #0f172a; color: #94a3b8; text-align: center; padding: 20px; font-size: 12px; line-height: 1.5; }
+        .footer a { color: #3b82f6; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>MERIDIAN COLLEGE</h1>
+            <p>Bhatkhuri, Gangapada, Bhubaneswar</p>
+        </div>
+        
+        <!-- Beautiful Header Image (Campus or generic education image) -->
+        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=600&auto=format&fit=crop" alt="Meridian Campus" class="hero-img">
+
+        <div class="content">
+            <div class="greeting">Hello {{from_name}},</div>
+            <div class="message">
+                Thank you for your interest in Meridian College! We have successfully received your admission enquiry for the <strong>{{course}}</strong> programme. 
+                <br><br>
+                Our admission counselors are reviewing your details and will contact you shortly at the phone number provided to discuss the admission process, fee structure, and help answer any questions you may have.
+            </div>
+
+            <div class="details-box">
+                <h3>Your Enquiry Summary:</h3>
+                <p><strong>Name:</strong> {{from_name}}</p>
+                <p><strong>Phone:</strong> {{phone}}</p>
+                <p><strong>Programme:</strong> {{course}}</p>
+            </div>
+
+            <div class="message">
+                At Meridian College, we are committed to providing top-tier academic excellence coupled with advanced coaching for competitive exams like JEE & NEET. We look forward to welcoming you to our campus!
+            </div>
+
+            <div class="cta-box">
+                <a href="https://www.meridiancollege.ac.in" class="btn" style="color: white;">Visit Our Website</a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>Meridian College Admissions Office</strong></p>
+            <p>Phone: +91 9437044215, 9777736396</p>
+            <p>Email: <a href="mailto:principalmeridiancollege@gmail.com">principalmeridiancollege@gmail.com</a></p>
+            <br>
+            <p>&copy; 2024 Meridian College. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
