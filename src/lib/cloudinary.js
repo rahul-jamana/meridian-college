@@ -1,10 +1,12 @@
 import { Cloudinary } from '@cloudinary/url-gen'
 
 // Initialize Cloudinary with your cloud name
-// Update VITE_CLOUDINARY_CLOUD_NAME in .env file with your actual cloud name
+// The VITE_ env var is baked in at build time; fallback to the known cloud name
+const CLOUD_NAME = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME || 'dbmpqbgar'
+
 const cld = new Cloudinary({
   cloud: {
-    cloudName: import.meta.env.VITE_CLOUDINARY_CLOUD_NAME || 'your_cloud_name_here',
+    cloudName: CLOUD_NAME,
   },
 })
 
@@ -21,14 +23,11 @@ export default cld
  *   <img src={getImageUrl('folder/image_name')} alt="..." />
  */
 export function getImageUrl(publicId, { width, height, quality = 'auto', format = 'auto' } = {}) {
-  let image = cld.image(publicId)
-
-  // Build URL manually for simplicity
-  const cloudName = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME || 'your_cloud_name_here'
   let transforms = `f_${format},q_${quality}`
   if (width) transforms += `,w_${width}`
   if (height) transforms += `,h_${height}`
   transforms += ',c_fill,g_auto'
 
-  return `https://res.cloudinary.com/${cloudName}/image/upload/${transforms}/${publicId}`
+  return `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/${transforms}/${publicId}`
 }
+
