@@ -26,7 +26,11 @@ export default function PrincipalMessage() {
                   alt="Mr. Debashish Panda - Principal"
                   className="w-full h-full object-cover"
                   onError={(e) => {
-                    e.target.src = "https://ui-avatars.com/api/?name=Debashish+Panda&background=1e293b&color=fff&size=600"
+                    if (e.target.src.includes('principal') && !e.target.src.includes('principal_photo')) {
+                      e.target.src = getImageUrl('meridian/principal_photo', { width: 600 });
+                    } else {
+                      e.target.src = "https://ui-avatars.com/api/?name=Debashish+Panda&background=1e293b&color=fff&size=600";
+                    }
                   }}
                 />
               </div>

@@ -208,8 +208,13 @@ export default function Navbar() {
                   className="h-full w-auto object-contain"
                   style={{ display: 'block', background: '#fff' }}
                   onError={(e) => {
-                    e.target.style.display = 'none';
-                    if (e.target.nextSibling) e.target.nextSibling.style.display = 'block';
+                    // Fallback to a secondary public ID if the first one fails
+                    if (e.target.src.includes('meridian_logo')) {
+                      e.target.src = getImageUrl('meridian/logo');
+                    } else {
+                      e.target.style.display = 'none';
+                      if (e.target.nextSibling) e.target.nextSibling.style.display = 'block';
+                    }
                   }}
                 />
                 <span style={{ display: 'none', color: '#222', fontWeight: 'bold', fontSize: '12px' }}>Logo Not Found</span>
