@@ -1,5 +1,6 @@
 // Simple LocalStorage Database for Admin Portal
 import { DEFAULT_GALLERY, DEFAULT_HERO_MEDIA, DEFAULT_NEWS, DEFAULT_EVENTS, DEFAULT_ACHIEVERS, DEFAULT_VISION_MISSION, DEFAULT_FEES } from './defaultData'
+import { getImageUrl } from './cloudinary'
 export const getNews = () => {
   const data = localStorage.getItem('meridian_news_v2');
   return data ? JSON.parse(data) : DEFAULT_NEWS;
@@ -46,7 +47,8 @@ export const saveHomepageGallery = (galleryArray) => {
   localStorage.setItem('meridian_homepage_gallery_v2', JSON.stringify(galleryArray));
 };
 
-const DEFAULT_ABOUT_IMAGE = 'https://res.cloudinary.com/dbmpqbgar/image/upload/f_auto,q_auto,w_800,c_fill,g_auto/meridian/photo_008';
+
+const DEFAULT_ABOUT_IMAGE = getImageUrl('meridian/photo_008', { width: 800 });
 
 export const getAboutImage = () => {
   return localStorage.getItem('meridian_about_image_v1') || DEFAULT_ABOUT_IMAGE;

@@ -1,4 +1,6 @@
 const CLOUD = 'dbmpqbgar';
+// Cache-bust version — unique per build
+const V = import.meta.env.VITE_BUILD_TIME || Date.now().toString();
 
 const heroSlides = [
   { type: 'image', cloudinaryId: 'meridian/hero/hero_01', title: 'Meridian College Campus' },
@@ -112,15 +114,15 @@ const galleryImages = [
 export const DEFAULT_HERO_MEDIA = heroSlides.map((i, idx) => ({
   id: `h${idx}`,
   url: i.type === "video" ?
-    `https://res.cloudinary.com/${CLOUD}/video/upload/q_auto/${i.cloudinaryId}` :
-    `https://res.cloudinary.com/${CLOUD}/image/upload/f_auto,q_auto,w_1920,c_fill,g_auto/${i.cloudinaryId}`,
+    `https://res.cloudinary.com/${CLOUD}/video/upload/q_auto/v${V}/${i.cloudinaryId}` :
+    `https://res.cloudinary.com/${CLOUD}/image/upload/f_auto,q_auto,w_1920,c_fill,g_auto/v${V}/${i.cloudinaryId}`,
   title: i.title,
   type: i.type || 'image'
 }));
 
 export const DEFAULT_GALLERY = galleryImages.map((i, idx) => ({
   id: `g${idx}`,
-  url: `https://res.cloudinary.com/${CLOUD}/image/upload/f_auto,q_auto,w_1920,c_fill,g_auto/${i.cloudinaryId}`,
+  url: `https://res.cloudinary.com/${CLOUD}/image/upload/f_auto,q_auto,w_1920,c_fill,g_auto/v${V}/${i.cloudinaryId}`,
   title: i.title,
   category: i.category,
   type: 'image'

@@ -68,7 +68,7 @@ export default function ChairmanMessage() {
             <div className="relative">
               <div className="w-64 h-80 lg:w-72 lg:h-96 rounded-3xl shadow-2xl shadow-navy-900/20 overflow-hidden border-4 border-white relative z-10">
                 <img
-                  src="https://res.cloudinary.com/dbmpqbgar/image/upload/w_600,q_auto,f_auto/v1777162396/meridian/chairman.jpg"
+                  src={getImageUrl('meridian/chairman', { width: 600 })}
                   alt="Er. Alok Ranjan Mallick - Chairman"
                   className="w-full h-full object-cover"
                   onError={(e) => {
