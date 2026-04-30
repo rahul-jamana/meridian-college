@@ -180,7 +180,7 @@ export const DEFAULT_VISION_MISSION = {
     label: "Personalized Mentorship",
     title: "How We Treat Our Students",
     content: "At Meridian College, every student is treated as a unique individual with immense potential. We move beyond traditional rote learning to provide a nurturing environment where students feel valued, heard, and deeply supported.",
-    image: `https://res.cloudinary.com/${CLOUD}/image/upload/f_auto,q_auto,w_800/v${V}/meridian/photo_023`,
+    image: "/vision/mentorship.png",
     points: [
       "One-on-one doubt clearing sessions with expert faculty.",
       "Psychological and academic counseling to reduce exam stress.",
