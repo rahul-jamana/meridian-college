@@ -180,7 +180,7 @@ export const DEFAULT_VISION_MISSION = {
     label: "Personalized Mentorship",
     title: "How We Treat Our Students",
     content: "At Meridian College, every student is treated as a unique individual with immense potential. We move beyond traditional rote learning to provide a nurturing environment where students feel valued, heard, and deeply supported.",
-    image: "/vision/mentorship.png",
+    image: `https://res.cloudinary.com/${CLOUD}/image/upload/f_auto,q_auto,w_800/v${V}/meridian/photo_023`,
     points: [
       "One-on-one doubt clearing sessions with expert faculty.",
       "Psychological and academic counseling to reduce exam stress.",
@@ -210,7 +210,7 @@ export const DEFAULT_VISION_MISSION = {
     title: "The Complete Transformation",
     content1: "When a student walks through our doors after their 10th boards, they are often uncertain about the future. By the time they graduate from Meridian College, they are entirely transformed.",
     content2: "We bridge the critical gap between school education and professional success. Our integrated CHSE + Entrance coaching ensures that our students don't just pass exams—they conquer national level competitive tests with top ranks.",
-    image: "/vision/transformation.png",
+    image: `https://res.cloudinary.com/${CLOUD}/image/upload/f_auto,q_auto,w_800/v${V}/meridian/photo_024`,
     card1: {
       title: "From Doubt to Confidence",
       desc: "We build intellectual independence, transforming hesitant teenagers into decisive, sharp, and highly capable young adults ready for top-tier universities."
