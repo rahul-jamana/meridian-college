@@ -78,8 +78,8 @@ export default function Contact() {
         student_name: formData.name,
         user_email: formData.email,
         to_email: formData.email, // Used for student email
-        college_email: 'principalmeridiancollege@gmail.com',
-        reply_to: 'principalmeridiancollege@gmail.com',
+        college_email: 'mununial637@gmail.com',
+        reply_to: 'mununial637@gmail.com',
         phone: formData.phone,
         course: formData.course,
         message: formData.message || 'No additional message.'
