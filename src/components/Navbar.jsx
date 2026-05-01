@@ -289,7 +289,7 @@ export default function Navbar() {
               )
             })}
             <NavLink
-              link={{ name: 'Apply Now', route: '/contact' }}
+              link={{ name: 'Apply Now', route: '/admission' }}
               className="ml-3 px-5 py-2.5 bg-gradient-to-r from-royal-600 to-royal-500 text-white text-sm font-semibold rounded-xl hover:shadow-lg hover:shadow-royal-500/30 hover:-translate-y-0.5 transition-all duration-300"
             />
           </div>
@@ -376,7 +376,7 @@ export default function Navbar() {
                 )
               })}
               <NavLink
-                link={{ name: 'Apply Now', route: '/contact' }}
+                link={{ name: 'Apply Now', route: '/admission' }}
                 onClick={() => setIsOpen(false)}
                 className="block text-center mt-3 px-5 py-3 bg-gradient-to-r from-royal-600 to-royal-500 text-white font-semibold rounded-xl"
               />

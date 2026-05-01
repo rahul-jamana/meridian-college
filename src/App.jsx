@@ -10,6 +10,7 @@ import CourseDetailPage from './pages/CourseDetailPage.jsx'
 import VisionMissionPage from './pages/VisionMissionPage.jsx'
 import FeeStructurePage from './pages/FeeStructurePage.jsx'
 import DirectoryPage from './pages/DirectoryPage.jsx'
+import AdmissionPage from './pages/AdmissionPage.jsx'
 import AdmissionPopup from './components/AdmissionPopup.jsx'
 import ChatAgent from './components/ChatAgent.jsx'
 
@@ -36,6 +37,7 @@ function App() {
         <Route path="/fees" element={<FeeStructurePage />} />
         <Route path="/directory" element={<DirectoryPage />} />
         <Route path="/course/:slug" element={<CourseDetailPage />} />
+        <Route path="/admission" element={<AdmissionPage />} />
 
         {/* Admin Routes */}
         <Route path="/admin" element={<Login />} />
