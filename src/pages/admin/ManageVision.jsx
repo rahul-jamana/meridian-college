@@ -7,9 +7,9 @@ export default function ManageVision() {
   const [data, setData] = useState(null);
   const [message, setMessage] = useState('');
 
-  useEffect(() => {
-    setData(getVisionMission());
-  }, []);
+  useEffect(() => { const fetchData = async () => {
+    setData(await getVisionMission());
+  }; fetchData(); }, []);
 
   const showMsg = (msg) => {
     setMessage(msg);
@@ -465,3 +465,4 @@ export default function ManageVision() {
     </div>
   );
 }
+

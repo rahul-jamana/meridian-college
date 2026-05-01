@@ -22,10 +22,10 @@ export default function AchieversPage() {
     tagline: 'Celebrating the outstanding accomplishments of Meridian students.',
   })
 
-  useEffect(() => {
-    setAchievers(getAchievers())
-    setSettings(getAchieversSettings())
-  }, [])
+  useEffect(() => { const fetchData = async () => {
+    setAchievers(await getAchievers())
+    setSettings(await getAchieversSettings())
+  }; fetchData(); }, [])
 
   const headingText = settings?.heading || 'Our Achievers';
   const headingWords = headingText.split(' ')
@@ -100,3 +100,4 @@ export default function AchieversPage() {
     </div>
   )
 }
+

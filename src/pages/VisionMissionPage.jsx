@@ -16,10 +16,10 @@ const visionJsonLd = [
 export default function VisionMissionPage() {
   const [data, setData] = useState(null)
 
-  useEffect(() => {
+  useEffect(() => { const fetchData = async () => {
     window.scrollTo(0, 0)
-    setData(getVisionMission())
-  }, [])
+    setData(await getVisionMission())
+  }; fetchData(); }, [])
 
   if (!data) return null;
 
@@ -230,3 +230,4 @@ export default function VisionMissionPage() {
     </div>
   )
 }
+

@@ -141,15 +141,15 @@ export default function ManageMedia() {
   const [homepageGalleryCategory, setHomepageGalleryCategory] = useState('Campus');
   const [aboutReady, setAboutReady] = useState('');
 
-  useEffect(() => {
-    setHeroItems(getHeroMedia());
-    setGalleryItems(getGallery());
-    setHomepageGalleryItems(getHomepageGallery());
-    setAchievers(getAchievers());
-    setAboutImg(getAboutImage());
-    setGallerySettings(getGallerySettings());
-    setAchieversSettings(getAchieversSettings());
-  }, []);
+  useEffect(() => { const fetchData = async () => {
+    setHeroItems(await getHeroMedia());
+    setGalleryItems(await getGallery());
+    setHomepageGalleryItems(await getHomepageGallery());
+    setAchievers(await getAchievers());
+    setAboutImg(await getAboutImage());
+    setGallerySettings(await getGallerySettings());
+    setAchieversSettings(await getAchieversSettings());
+  }; fetchData(); }, []);
 
   const showMsg = (msg) => {
     setMessage(msg);
@@ -785,3 +785,4 @@ export default function ManageMedia() {
     </div>
   );
 }
+

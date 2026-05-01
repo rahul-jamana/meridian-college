@@ -7,9 +7,9 @@ export default function ManageFees() {
   const [fees, setFees] = useState(null);
   const [message, setMessage] = useState('');
 
-  useEffect(() => {
-    setFees(getFees());
-  }, []);
+  useEffect(() => { const fetchData = async () => {
+    setFees(await getFees());
+  }; fetchData(); }, []);
 
   const showMsg = (msg) => {
     setMessage(msg);
@@ -203,3 +203,4 @@ export default function ManageFees() {
     </div>
   );
 }
+

@@ -18,12 +18,12 @@ export default function Gallery() {
   const [activeFilter, setActiveFilter] = useState('All')
   const [settings, setSettings] = useState({ label: 'Campus Life', heading: 'Campus Gallery', tagline: 'Real moments from Meridian College — our students, faculty, labs, and events' })
 
-  useEffect(() => {
-    const fetchedGallery = getGallery()
+  useEffect(() => { const fetchData = async () => {
+    const fetchedGallery = await getGallery()
     setImages(fetchedGallery)
     setCategories(['All', ...new Set(fetchedGallery.map(img => img.category))])
-    setSettings(getGallerySettings())
-  }, [])
+    setSettings(await getGallerySettings())
+  }; fetchData(); }, [])
 
   const filtered = activeFilter === 'All'
     ? images
@@ -178,3 +178,4 @@ export default function Gallery() {
     </section>
   )
 }
+

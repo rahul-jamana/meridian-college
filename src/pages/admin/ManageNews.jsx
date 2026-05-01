@@ -10,9 +10,9 @@ export default function ManageNews() {
   const [text, setText] = useState('');
   const [message, setMessage] = useState('');
 
-  useEffect(() => {
-    setItems(activeTab === 'news' ? getNews() : getEvents());
-  }, [activeTab]);
+  useEffect(() => { const fetchData = async () => {
+    setItems(activeTab === 'news' ? await getNews() : await getEvents());
+  }; fetchData(); }, [activeTab]);
 
   const handleAdd = (e) => {
     e.preventDefault();
@@ -148,3 +148,4 @@ export default function ManageNews() {
     </div>
   );
 }
+

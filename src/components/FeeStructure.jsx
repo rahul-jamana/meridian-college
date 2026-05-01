@@ -6,9 +6,9 @@ import { getFees } from '../lib/db';
 export default function FeeStructure() {
   const [fees, setFees] = useState([]);
 
-  useEffect(() => {
-    setFees(getFees());
-  }, []);
+  useEffect(() => { const fetchData = async () => {
+    setFees(await getFees());
+  }; fetchData(); }, []);
 
   return (
     <section id="fees" className="relative py-20 lg:py-28 bg-white overflow-hidden">
@@ -130,3 +130,4 @@ const courseTitles = [
   "+2 Integrated Science",
   "+3 Science Honours"
 ];
+

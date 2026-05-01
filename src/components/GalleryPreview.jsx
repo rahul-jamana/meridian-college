@@ -19,12 +19,12 @@ export default function GalleryPreview() {
   })
   const [total, setTotal] = useState(0)
 
-  useEffect(() => {
-    const gallery = getHomepageGallery()
+  useEffect(() => { const fetchData = async () => {
+    const gallery = await getHomepageGallery()
     setTotal(gallery.length)
     setPreviewImages(gallery)
-    setSettings(getGallerySettings())
-  }, [])
+    setSettings(await getGallerySettings())
+  }; fetchData(); }, [])
 
   const headingWords = settings.heading.split(' ')
   const headingFirst = headingWords[0]
@@ -110,3 +110,4 @@ export default function GalleryPreview() {
     </section>
   )
 }
+

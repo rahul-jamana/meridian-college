@@ -36,9 +36,9 @@ export default function Hero() {
     }
   };
 
-  useEffect(() => {
-    setHeroSlides(getHeroMedia())
-  }, [])
+  useEffect(() => { const fetchData = async () => {
+    setHeroSlides(await getHeroMedia())
+  }; fetchData(); }, [])
 
   const slide = heroSlides[current] || null
 
@@ -50,7 +50,7 @@ export default function Hero() {
     if (heroSlides.length > 0) setCurrent((prev) => (prev - 1 + heroSlides.length) % heroSlides.length)
   }, [heroSlides.length])
 
-  useEffect(() => {
+  useEffect(() => { const fetchData = async () => {
     // Pause all videos
     document.querySelectorAll('.hero-video').forEach(v => {
       if (v.id !== `hero-vid-${current}`) v.pause();
@@ -75,7 +75,7 @@ export default function Hero() {
     }
 
     return () => { if (timerRef.current) clearTimeout(timerRef.current) }
-  }, [current, slide, goNext])
+  }; fetchData(); }, [current, slide, goNext])
 
   // Video end → next slide
   const handleVideoEnd = useCallback(() => goNext(), [goNext])
@@ -300,3 +300,4 @@ export default function Hero() {
     </section>
   )
 }
+

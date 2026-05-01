@@ -10,10 +10,10 @@ export default function NotificationTicker() {
   const [notifications, setNotifications] = useState([])
   const [events, setEvents] = useState([])
 
-  useEffect(() => {
-    setNotifications(getNews())
-    setEvents(getEvents())
-  }, [])
+  useEffect(() => { const fetchData = async () => {
+    setNotifications(await getNews())
+    setEvents(await getEvents())
+  }; fetchData(); }, [])
 
   const items = activeTab === 'notifications' ? notifications : events
 
@@ -97,3 +97,4 @@ export default function NotificationTicker() {
     </section>
   )
 }
+
