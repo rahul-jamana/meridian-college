@@ -20,7 +20,11 @@ export default function About() {
   const [aboutImg, setAboutImg] = useState('')
 
   useEffect(() => {
-    setAboutImg(getAboutImage())
+    const load = async () => {
+      const url = await getAboutImage()
+      setAboutImg(url)
+    }
+    load()
   }, [])
   return (
     <section id="about" className="relative py-10 lg:py-16 bg-white overflow-hidden">
