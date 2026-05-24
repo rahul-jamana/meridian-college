@@ -47,3 +47,37 @@ export function getImageUrl(publicId, { width, height, quality = 'auto', format 
 export function getVideoUrl(publicId, { quality = 'auto' } = {}) {
   return `https://res.cloudinary.com/${CLOUD_NAME}/video/upload/q_${quality}/v${CACHE_VERSION}/${publicId}`;
 }
+
+/**
+ * Upload a file (image or video) to Cloudinary using unsigned upload.
+ * Requires an unsigned upload preset configured in the Cloudinary dashboard.
+ * Returns the secure URL of the uploaded file.
+ */
+const UPLOAD_PRESET = import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET || 'meridian_unsigned';
+
+export async function uploadToCloudinary(file) {
+  const formData = new FormData();
+  formData.append('file', file);
+  formData.append('upload_preset', UPLOAD_PRESET);
+  formData.append('folder', 'meridian'); // organize uploads in a folder
+
+  const resourceType = file.type.startsWith('video') ? 'video' : 'image';
+  const url = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/${resourceType}/upload`;
+
+  const response = await fetch(url, {
+    method: 'POST',
+    body: formData,
+  });
+
+  if (!response.ok) {
+    const errorData = await response.json().catch(() => ({}));
+    throw new Error(errorData?.error?.message || `Upload failed (${response.status})`);
+  }
+
+  const data = await response.json();
+  return {
+    url: data.secure_url,
+    publicId: data.public_id,
+    type: resourceType,
+  };
+}

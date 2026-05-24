@@ -1,36 +1,32 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { getHeroMedia, saveHeroMedia, getGallery, saveGallery, getAboutImage, saveAboutImage, getGallerySettings, saveGallerySettings, getHomepageGallery, saveHomepageGallery, getAchievers, saveAchievers, getAchieversSettings, saveAchieversSettings } from '../../lib/db';
+import { uploadToCloudinary } from '../../lib/cloudinary';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HiOutlineTrash, HiOutlinePhotograph, HiOutlineLink, HiUpload } from 'react-icons/hi';
 
-// Helper: read a File as a base64 data URL
-function readFileAsDataURL(file) {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onload = () => resolve(reader.result);
-    reader.onerror = reject;
-    reader.readAsDataURL(file);
-  });
-}
-
 // Reusable upload input with toggle between URL and File
+// File mode now uploads to Cloudinary and returns a real HTTPS URL
 function UploadInput({ label, onReady, accept = 'image/*', allowVideo = false }) {
   const [mode, setMode] = useState('file'); // 'file' | 'url'
   const [urlVal, setUrlVal] = useState('');
   const [preview, setPreview] = useState('');
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
   const fileRef = useRef();
 
   const handleFile = async (e) => {
     const file = e.target.files[0];
     if (!file) return;
     setLoading(true);
+    setError('');
     try {
-      const dataUrl = await readFileAsDataURL(file);
-      setPreview(dataUrl);
-      onReady(dataUrl, file.type.startsWith('video') ? 'video' : 'image');
-    } catch {
-      alert('Failed to read file.');
+      // Upload to Cloudinary — returns a real HTTPS URL visible to everyone
+      const result = await uploadToCloudinary(file);
+      setPreview(result.url);
+      onReady(result.url, result.type);
+    } catch (err) {
+      console.error('Cloudinary upload failed:', err);
+      setError(err.message || 'Upload failed. Please check your Cloudinary upload preset.');
     }
     setLoading(false);
   };
@@ -65,13 +61,21 @@ function UploadInput({ label, onReady, accept = 'image/*', allowVideo = false })
       {/* File mode */}
       {mode === 'file' && (
         <div
-          className="border-2 border-dashed border-royal-300 rounded-xl p-6 text-center cursor-pointer hover:bg-royal-50 transition-colors"
-          onClick={() => fileRef.current?.click()}
+          className={`border-2 border-dashed rounded-xl p-6 text-center cursor-pointer transition-colors ${loading ? 'border-amber-400 bg-amber-50' : 'border-royal-300 hover:bg-royal-50'}`}
+          onClick={() => !loading && fileRef.current?.click()}
         >
           <HiOutlinePhotograph className="w-10 h-10 text-royal-400 mx-auto mb-2" />
-          <p className="text-sm text-navy-600 font-medium">Click to select a file from your laptop</p>
-          <p className="text-xs text-navy-400 mt-1">{allowVideo ? 'JPG, PNG, MP4 supported' : 'JPG, PNG, WEBP supported'}</p>
-          {loading && <p className="text-xs text-royal-500 mt-2 animate-pulse">Processing...</p>}
+          {loading ? (
+            <>
+              <p className="text-sm text-amber-700 font-semibold animate-pulse">☁️ Uploading to cloud...</p>
+              <p className="text-xs text-amber-500 mt-1">Please wait, this may take a few seconds</p>
+            </>
+          ) : (
+            <>
+              <p className="text-sm text-navy-600 font-medium">Click to select a file from your laptop</p>
+              <p className="text-xs text-navy-400 mt-1">{allowVideo ? 'JPG, PNG, MP4 supported' : 'JPG, PNG, WEBP supported'}</p>
+            </>
+          )}
           <input
             ref={fileRef}
             type="file"
@@ -102,15 +106,22 @@ function UploadInput({ label, onReady, accept = 'image/*', allowVideo = false })
         </div>
       )}
 
+      {/* Error message */}
+      {error && (
+        <div className="p-3 bg-red-50 text-red-600 rounded-xl text-xs font-medium border border-red-200">
+          ❌ {error}
+        </div>
+      )}
+
       {/* Preview */}
       {preview && (
         <div className="mt-2 rounded-xl overflow-hidden border border-navy-100">
-          {preview.startsWith('data:video') || preview.match(/\.(mp4|webm)$/i) ? (
+          {preview.match(/\.(mp4|webm)$/i) ? (
             <video src={preview} className="w-full h-32 object-cover" muted />
           ) : (
             <img src={preview} alt="preview" className="w-full h-32 object-cover" />
           )}
-          <p className="text-xs text-green-600 font-semibold text-center py-1.5 bg-green-50">✅ Ready to add</p>
+          <p className="text-xs text-green-600 font-semibold text-center py-1.5 bg-green-50">✅ Uploaded to cloud — Ready to add</p>
         </div>
       )}
     </div>
