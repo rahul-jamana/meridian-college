@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { HiX, HiAcademicCap } from 'react-icons/hi'
+import { getAcademicYear } from '../lib/db'
 
 /*
  * AdmissionPopup — Shows a popup after 5 seconds on the home page.
@@ -10,9 +11,15 @@ import { HiX, HiAcademicCap } from 'react-icons/hi'
  */
 export default function AdmissionPopup() {
   const [show, setShow] = useState(false)
+  const [academicYear, setAcademicYear] = useState('2026-27')
   const location = useLocation()
 
   useEffect(() => {
+    const load = async () => {
+      setAcademicYear(await getAcademicYear())
+    }
+    load()
+
     // Show the popup shortly after the page loads, every time it loads
     const timer = setTimeout(() => {
       setShow(true)
@@ -64,7 +71,7 @@ export default function AdmissionPopup() {
               </motion.div>
 
               <h3 className="text-2xl font-bold text-white mb-2">Admissions Open!</h3>
-              <p className="text-white/80 text-sm">Session 2026–27</p>
+              <p className="text-white/80 text-sm">Session {academicYear}</p>
             </div>
 
             {/* Content */}

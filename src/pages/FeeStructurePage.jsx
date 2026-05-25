@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { HiArrowLeft } from 'react-icons/hi'
@@ -7,6 +7,7 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import FeeStructure from '../components/FeeStructure'
 import ScrollToTop from '../components/ScrollToTop'
+import { getAcademicYear } from '../lib/db'
 
 const feeJsonLd = [
   breadcrumbSchema([
@@ -16,8 +17,14 @@ const feeJsonLd = [
 ]
 
 export default function FeeStructurePage() {
+  const [academicYear, setAcademicYear] = useState('2026-27')
+
   useEffect(() => {
     window.scrollTo(0, 0)
+    const load = async () => {
+      setAcademicYear(await getAcademicYear())
+    }
+    load()
   }, [])
 
   return (
@@ -43,7 +50,7 @@ export default function FeeStructurePage() {
               <HiArrowLeft className="w-4 h-4" /> Back to Home
             </Link>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-3">
-              Fee <span className="text-transparent bg-clip-text bg-gradient-to-r from-royal-300 to-royal-400">Structure</span> 2026-27
+              Fee <span className="text-transparent bg-clip-text bg-gradient-to-r from-royal-300 to-royal-400">Structure</span> {academicYear}
             </h1>
             <p className="text-white/70 text-lg max-w-2xl">
               Transparent and affordable fee structure for all programmes at Meridian College Bhubaneswar — one of the top science colleges in Odisha

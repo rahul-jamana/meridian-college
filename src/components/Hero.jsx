@@ -10,7 +10,7 @@ const CLOUD_NAME = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME || 'dbmpqbgar'
  * Uses crossfade (no slide animation) for smooth transitions,
  * especially important for video which glitches with x-translate.
  */
-import { getHeroMedia } from '../lib/db'
+import { getHeroMedia, getAcademicYear } from '../lib/db'
 
 const trustBadges = [
   { icon: HiShieldCheck, text: 'Affiliated to CHSE Odisha' },
@@ -23,6 +23,7 @@ const IMAGE_DURATION = 5000
 export default function Hero() {
   const navigate = useNavigate()
   const [heroSlides, setHeroSlides] = useState([])
+  const [academicYear, setAcademicYear] = useState('2026-27')
   const [current, setCurrent] = useState(0)
   const videoRef = useRef(null)
   const timerRef = useRef(null)
@@ -38,6 +39,7 @@ export default function Hero() {
 
   useEffect(() => { const fetchData = async () => {
     setHeroSlides(await getHeroMedia())
+    setAcademicYear(await getAcademicYear())
   }; fetchData(); }, [])
 
   const slide = heroSlides[current] || null
@@ -213,7 +215,7 @@ export default function Hero() {
           >
             <span className="inline-flex items-center gap-2 bg-gold-500/20 backdrop-blur-sm border border-gold-400/30 text-gold-400 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-semibold mb-4 sm:mb-6">
               <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-              Admissions Open 2026–27
+              Admissions Open {academicYear}
             </span>
           </motion.div>
 

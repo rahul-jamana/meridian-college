@@ -110,6 +110,7 @@ export default function Footer() {
                 <div>
                   <a href="tel:9437044215" className="block text-sm text-navy-300 hover:text-royal-400 transition-colors">9437044215</a>
                   <a href="tel:9777736396" className="block text-sm text-navy-300 hover:text-royal-400 transition-colors">9777736396</a>
+                  <a href="tel:9040799627" className="block text-sm text-navy-300 hover:text-royal-400 transition-colors">9040799627</a>
                 </div>
               </div>
               <div className="flex gap-3">

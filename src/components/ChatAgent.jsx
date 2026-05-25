@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { HiX, HiPaperAirplane, HiAcademicCap } from 'react-icons/hi'
+import { getAcademicYear } from '../lib/db'
 
 /*
  * ChatAgent — Floating AI chat widget for college queries.
@@ -10,10 +11,10 @@ import { HiX, HiPaperAirplane, HiAcademicCap } from 'react-icons/hi'
  */
 
 // Knowledge base — college FAQs
-const knowledgeBase = [
+const getKnowledgeBase = (year) => [
   {
     keywords: ['admission', 'apply', 'enroll', 'registration', 'join', 'seat'],
-    answer: '📋 **Admissions are open for 2026-27!**\n\n**+2 Science:** Apply through dheorissa.in (CHSE portal). Choose Self-Finance → Khordha District → Meridian College.\n\n**+3 Science:** Apply through samsodisha.gov.in (SAMS portal).\n\nFor direct assistance, call **9437044215** or visit our campus at Bhatkhuri, Gangapada, Bhubaneswar.',
+    answer: `📋 **Admissions are open for ${year}!**\n\n**+2 Science:** Apply through dheorissa.in (CHSE portal). Choose Self-Finance → Khordha District → Meridian College.\n\n**+3 Science:** Apply through samsodisha.gov.in (SAMS portal).\n\nFor direct assistance, call **9437044215** or visit our campus at Bhatkhuri, Gangapada, Bhubaneswar.`,
   },
   {
     keywords: ['course', 'programme', 'subject', 'stream', 'pcm', 'pcb', 'bsc'],
@@ -33,7 +34,7 @@ const knowledgeBase = [
   },
   {
     keywords: ['lab', 'laboratory', 'practical', 'science lab', 'computer lab'],
-    answer: '🔬 **Our Laboratories:**\n\n• Physics Lab — Fully equipped with modern instruments\n• Chemistry Lab — Wet lab with safety equipment\n• Biology Lab — Specimens, microscopes, and models\n• Computer Lab — Latest PCs with internet\n• Language Lab\n\nAll labs are well-maintained and used for regular practical sessions.',
+    answer: '🔬 **Laboratories:**\n\nState-of-the-art facilities for hands-on learning:\n• **Physics Lab:** Fully equipped with optoelectronic, semiconductor & dark room setups.\n• **Chemistry Lab:** Equipped for volumetric & salt analysis, organic chemistry practicals.\n• **Biology Lab:** Rich specimen collections, compound & projection microscopes, models.\n• **Computer Lab:** High-speed internet, modern desktops, programming-ready (Java, C, Python).',
   },
   {
     keywords: ['jee', 'neet', 'entrance', 'competitive', 'exam', 'coaching'],
@@ -87,12 +88,14 @@ const quickQuestions = [
   'JEE/NEET coaching?',
 ]
 
-function findAnswer(query) {
+function findAnswer(query, year) {
   const lower = query.toLowerCase()
   let bestMatch = null
   let bestScore = 0
 
-  for (const item of knowledgeBase) {
+  const activeKnowledgeBase = getKnowledgeBase(year)
+
+  for (const item of activeKnowledgeBase) {
     const score = item.keywords.filter(k => lower.includes(k)).length
     if (score > bestScore) {
       bestScore = score
@@ -120,7 +123,15 @@ export default function ChatAgent() {
   ])
   const [input, setInput] = useState('')
   const [isTyping, setIsTyping] = useState(false)
+  const [academicYear, setAcademicYear] = useState('2026-27')
   const chatEndRef = useRef(null)
+
+  useEffect(() => {
+    const load = async () => {
+      setAcademicYear(await getAcademicYear())
+    }
+    load()
+  }, [])
 
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -138,7 +149,7 @@ export default function ChatAgent() {
 
     // Simulate typing delay
     setTimeout(() => {
-      const answer = findAnswer(query)
+      const answer = findAnswer(query, academicYear)
       setMessages(prev => [...prev, { role: 'bot', text: answer }])
       setIsTyping(false)
     }, 800 + Math.random() * 500)

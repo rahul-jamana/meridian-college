@@ -1,9 +1,19 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { HiDownload } from 'react-icons/hi'
+import { getAcademicYear } from '../lib/db'
 
 export default function AdmissionCTA() {
+  const [academicYear, setAcademicYear] = useState('2026-27')
+
+  useEffect(() => {
+    const load = async () => {
+      setAcademicYear(await getAcademicYear())
+    }
+    load()
+  }, [])
+
   return (
     <section className="relative py-20 lg:py-28 overflow-hidden">
       {/* Background */}
@@ -37,7 +47,7 @@ export default function AdmissionCTA() {
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 leading-tight">
             Limited Seats Available for{' '}
-            <span className="text-gold-400">2026–27</span>{' '}
+            <span className="text-gold-400">{academicYear}</span>{' '}
             Admissions
           </h2>
           <p className="text-white/80 text-lg lg:text-xl max-w-2xl mx-auto mb-10">

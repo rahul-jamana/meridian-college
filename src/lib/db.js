@@ -86,3 +86,7 @@ const DEFAULT_PRINCIPAL_IMAGE = getImageUrl('meridian/principal', { width: 600 }
 export const getPrincipalImage = async () => await fetchFromDB('meridian_principal_image_v1', DEFAULT_PRINCIPAL_IMAGE);
 export const savePrincipalImage = async (url) => await saveToDB('meridian_principal_image_v1', url);
 
+const DEFAULT_ACADEMIC_YEAR = '2026-27';
+export const getAcademicYear = async () => await fetchFromDB('meridian_academic_year_v1', DEFAULT_ACADEMIC_YEAR);
+export const saveAcademicYear = async (year) => await saveToDB('meridian_academic_year_v1', year);
+
