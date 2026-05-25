@@ -4,7 +4,7 @@ import { getImageUrl } from '../lib/cloudinary'
 
 export default function Messages() {
   return (
-    <section id="chairman" className="relative py-20 lg:py-28 bg-white overflow-hidden">
+    <section id="secretary" className="relative py-20 lg:py-28 bg-white overflow-hidden">
       {/* Decorative Background */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-royal-50/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
       
@@ -30,7 +30,7 @@ export default function Messages() {
                 */}
                 <img 
                   src={getImageUrl('meridian/chairman', { width: 800, crop: 'fill' })} 
-                  alt="Er. Alok Ranjan Mallick - Chairman" 
+                  alt="Er. Alok Ranjan Mallick - Secretary" 
                   className="w-full h-auto object-cover object-top aspect-[3/4]"
                   onError={(e) => {
                     // Fallback if image is not yet uploaded to cloudinary
@@ -58,7 +58,7 @@ export default function Messages() {
             </div>
             
             <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-navy-800 mb-6">
-              Chairman's <span className="gradient-text">Message</span>
+              Secretary's <span className="gradient-text">Message</span>
             </h2>
             
             <div className="relative">
@@ -73,7 +73,7 @@ export default function Messages() {
             
             <div className="border-t border-navy-100 pt-6">
               <h3 className="text-xl font-bold text-navy-800">Er. Alok Ranjan Mallick</h3>
-              <p className="text-royal-600 font-medium">Chairman, Meridian College</p>
+              <p className="text-royal-600 font-medium">Secretary, Meridian College</p>
             </div>
           </motion.div>
           

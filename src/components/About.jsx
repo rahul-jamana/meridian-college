@@ -6,7 +6,7 @@ import { getAboutImage } from '../lib/db'
 const highlights = [
   'Established in 2011',
   'Co-Educational Institution',
-  '+2 Science (PCB & PCM Streams)',
+  '+2 Science (PCB & PCM Subjects)',
   '+3 Science Honours (6 Subjects)',
   'Smart Classrooms & Science Labs',
   '15+ Experienced & Dedicated Faculty',
@@ -79,10 +79,10 @@ export default function About() {
             </h2>
             <p className="text-navy-500 text-base lg:text-lg leading-relaxed mb-4">
               Meridian College, Bhatkhuri, Gangapada, Bhubaneswar is one of the <strong className="text-navy-700">top private science colleges in Odisha</strong>,
-              established in 2011 under the visionary leadership of Chairman <strong className="text-navy-700">Er. Alok Ranjan Mallick</strong>. Offering +2 Science (PCM & PCB) and +3 Science Honours (B.Sc.) programmes, the college is affiliated to CHSE Odisha and Utkal University. Recognized among the <strong className="text-navy-700">best colleges in Bhubaneswar</strong>, Meridian is committed to academic excellence and holistic student development.
+              established in 2011 under the visionary leadership of Secretary <strong className="text-navy-700">Er. Alok Ranjan Mallick</strong>. Offering +2 Science (PCM & PCB) and +3 Science Honours (B.Sc.) programmes, the college is affiliated to CHSE Odisha and Utkal University. Recognized among the <strong className="text-navy-700">best colleges in Bhubaneswar</strong>, Meridian is committed to academic excellence and holistic student development.
             </p>
             <p className="text-navy-500 text-base lg:text-lg leading-relaxed mb-8">
-              The college provides PCB and PCM streams, separate hostel facilities for boys and girls, smart
+              The college provides PCB and PCM subjects, separate hostel facilities for boys and girls, smart
               classrooms, well-equipped science labs, library, optional coaching for JEE/NEET, spoken English
               classes, transportation facility, and dedicated academic mentoring with regular evening classes.
             </p>

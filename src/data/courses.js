@@ -14,7 +14,7 @@ export const courses = [
     seats: 64,
     affiliation: 'Council of Higher Secondary Education (CHSE), Odisha',
     eligibility: 'Passed Class 10 (Matriculation) from a recognized board with minimum 50% marks in Science and Mathematics.',
-    description: 'The +2 Science PCM stream is designed for students who aspire to pursue careers in Engineering, Technology, Architecture, and Pure Sciences. This programme provides a strong foundation in Physics, Chemistry, and Mathematics with coaching-oriented teaching methodology. Students receive dedicated preparation for competitive exams like JEE Main, JEE Advanced, WBJEE, and other engineering entrance exams.',
+    description: 'The +2 Science PCM subject is designed for students who aspire to pursue careers in Engineering, Technology, Architecture, and Pure Sciences. This programme provides a strong foundation in Physics, Chemistry, and Mathematics with coaching-oriented teaching methodology. Students receive dedicated preparation for competitive exams like JEE Main, JEE Advanced, WBJEE, and other engineering entrance exams.',
     highlights: [
       'Dedicated JEE & Engineering entrance coaching',
       'Coaching-oriented teaching with doubt-clearing sessions',
@@ -53,7 +53,7 @@ export const courses = [
     seats: 64,
     affiliation: 'Council of Higher Secondary Education (CHSE), Odisha',
     eligibility: 'Passed Class 10 (Matriculation) from a recognized board with minimum 50% marks in Science.',
-    description: 'The +2 Science PCB stream is ideal for students aspiring to become doctors, pharmacists, biotechnologists, or life scientists. This programme provides intensive preparation in Physics, Chemistry, and Biology with dedicated NEET coaching. Our experienced faculty ensures concept-clear teaching with regular practice tests and doubt-clearing sessions.',
+    description: 'The +2 Science PCB subject is ideal for students aspiring to become doctors, pharmacists, biotechnologists, or life scientists. This programme provides intensive preparation in Physics, Chemistry, and Biology with dedicated NEET coaching. Our experienced faculty ensures concept-clear teaching with regular practice tests and doubt-clearing sessions.',
     highlights: [
       'Dedicated NEET & Medical entrance coaching',
       'Biology lab with specimen collection & microscopes',
@@ -91,7 +91,7 @@ export const courses = [
     seats: 24,
     affiliation: 'Utkal University, Bhubaneswar',
     eligibility: 'Passed +2 Science with Physics as a subject from CHSE or equivalent board with minimum 45% aggregate marks.',
-    description: 'The B.Sc. Physics Honours programme offers an in-depth study of classical and modern physics, preparing students for research careers, higher studies (M.Sc., Ph.D.), and competitive exams. The curriculum covers mechanics, electrodynamics, quantum mechanics, thermodynamics, and nuclear physics with extensive laboratory practical sessions.',
+    description: 'The B.Sc. Physics Honours stream offers an in-depth study of classical and modern physics, preparing students for research careers, higher studies (M.Sc., Ph.D.), and competitive exams. The curriculum covers mechanics, electrodynamics, quantum mechanics, thermodynamics, and nuclear physics with extensive laboratory practical sessions.',
     highlights: [
       'Comprehensive syllabus covering classical & modern physics',
       'Well-equipped physics laboratory',
@@ -122,7 +122,7 @@ export const courses = [
     seats: 24,
     affiliation: 'Utkal University, Bhubaneswar',
     eligibility: 'Passed +2 Science with Chemistry as a subject from CHSE or equivalent board with minimum 45% aggregate marks.',
-    description: 'The B.Sc. Chemistry Honours programme provides deep knowledge in organic, inorganic, and physical chemistry. Students develop skills in analytical techniques, spectroscopy, and chemical synthesis. The programme prepares students for careers in pharmaceuticals, chemical industry, research, and higher studies.',
+    description: 'The B.Sc. Chemistry Honours stream provides deep knowledge in organic, inorganic, and physical chemistry. Students develop skills in analytical techniques, spectroscopy, and chemical synthesis. The programme prepares students for careers in pharmaceuticals, chemical industry, research, and higher studies.',
     highlights: [
       'Modern chemistry laboratories',
       'Hands-on experience with analytical instruments',
@@ -154,7 +154,7 @@ export const courses = [
     seats: 24,
     affiliation: 'Utkal University, Bhubaneswar',
     eligibility: 'Passed +2 Science with Mathematics from CHSE or equivalent board with minimum 45% aggregate marks.',
-    description: 'The B.Sc. Mathematics Honours programme develops strong analytical and problem-solving skills. Students study pure and applied mathematics including algebra, real analysis, differential equations, and numerical methods. This programme is ideal for students aiming for careers in banking, data science, actuarial science, or academic research.',
+    description: 'The B.Sc. Mathematics Honours stream develops strong analytical and problem-solving skills. Students study pure and applied mathematics including algebra, real analysis, differential equations, and numerical methods. This programme is ideal for students aiming for careers in banking, data science, actuarial science, or academic research.',
     highlights: [
       'Strong focus on analytical & logical reasoning',
       'Computer-aided mathematical problem solving',
@@ -185,7 +185,7 @@ export const courses = [
     seats: 16,
     affiliation: 'Utkal University, Bhubaneswar',
     eligibility: 'Passed +2 Science with Biology from CHSE or equivalent board with minimum 45% aggregate marks.',
-    description: 'The B.Sc. Botany Honours programme explores the plant kingdom — from cellular biology to ecology. Students learn plant physiology, taxonomy, genetics, molecular biology, and biotechnology. The programme prepares students for careers in agriculture, environmental science, forestry, and research.',
+    description: 'The B.Sc. Botany Honours stream explores the plant kingdom — from cellular biology to ecology. Students learn plant physiology, taxonomy, genetics, molecular biology, and biotechnology. The programme prepares students for careers in agriculture, environmental science, forestry, and research.',
     highlights: [
       'Botanical garden for practical learning',
       'Plant tissue culture laboratory',
@@ -215,7 +215,7 @@ export const courses = [
     seats: 16,
     affiliation: 'Utkal University, Bhubaneswar',
     eligibility: 'Passed +2 Science with Biology from CHSE or equivalent board with minimum 45% aggregate marks.',
-    description: 'The B.Sc. Zoology Honours programme covers the animal kingdom comprehensively — from invertebrates to human physiology. Students study animal behavior, genetics, evolution, embryology, and wildlife biology. This programme is a stepping stone to medical research, wildlife management, and life sciences careers.',
+    description: 'The B.Sc. Zoology Honours stream covers the animal kingdom comprehensively — from invertebrates to human physiology. Students study animal behavior, genetics, evolution, embryology, and wildlife biology. This programme is a stepping stone to medical research, wildlife management, and life sciences careers.',
     highlights: [
       'Zoology museum with specimen collection',
       'Dissection and practical labs',
@@ -245,7 +245,7 @@ export const courses = [
     seats: 24,
     affiliation: 'Utkal University, Bhubaneswar',
     eligibility: 'Passed +2 Science with Mathematics from CHSE or equivalent board with minimum 45% aggregate marks.',
-    description: 'The B.Sc. Computer Science Honours programme equips students with comprehensive knowledge of programming, algorithms, databases, networking, and software development. With a focus on practical skills and industry-ready training, this programme prepares students for the booming IT sector and higher studies in computer science.',
+    description: 'The B.Sc. Computer Science Honours stream equips students with comprehensive knowledge of programming, algorithms, databases, networking, and software development. With a focus on practical skills and industry-ready training, this programme prepares students for the booming IT sector and higher studies in computer science.',
     highlights: [
       'Modern computer laboratory with latest hardware',
       'Programming in C, C++, Java, Python',

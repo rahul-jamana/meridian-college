@@ -19,7 +19,7 @@ const navLinks = [
       { name: 'About Meridian', href: '#about' },
       { name: 'Vision & Mission', route: '/vision-mission' },
       { name: 'Fee Structure', route: '/fees' },
-      { name: "Chairman's Message", href: '#chairman' },
+      { name: "Secretary's Message", href: '#secretary' },
       { name: "Principal's Message", href: '#principal' },
     ],
   },

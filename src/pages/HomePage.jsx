@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar.jsx'
 import Hero from '../components/Hero.jsx'
 import NotificationTicker from '../components/NotificationTicker.jsx'
 import About from '../components/About.jsx'
-import ChairmanMessage from '../components/ChairmanMessage.jsx'
+import SecretaryMessage from '../components/SecretaryMessage.jsx'
 import PrincipalMessage from '../components/PrincipalMessage.jsx'
 import StatsCounter from '../components/StatsCounter.jsx'
 import Programmes from '../components/Programmes.jsx'
@@ -39,7 +39,7 @@ export default function HomePage() {
       <Hero />
       <NotificationTicker />
       <About />
-      <ChairmanMessage />
+      <SecretaryMessage />
       <PrincipalMessage />
       <StatsCounter />
       <Programmes />

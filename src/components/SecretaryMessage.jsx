@@ -3,9 +3,9 @@ import { motion } from 'framer-motion'
 import { HiChat } from 'react-icons/hi'
 import { getImageUrl } from '../lib/cloudinary'
 
-export default function ChairmanMessage() {
+export default function SecretaryMessage() {
   return (
-    <section id="chairman" className="relative py-20 lg:py-28 bg-gradient-to-br from-navy-50/60 to-royal-50/30 overflow-hidden">
+    <section id="secretary" className="relative py-20 lg:py-28 bg-gradient-to-br from-navy-50/60 to-royal-50/30 overflow-hidden">
       {/* Decorative */}
       <div className="absolute top-10 right-0 w-80 h-80 bg-royal-100/40 rounded-full translate-x-1/3 blur-3xl"></div>
       <div className="absolute bottom-10 left-0 w-64 h-64 bg-navy-100/30 rounded-full -translate-x-1/3 blur-3xl"></div>
@@ -24,11 +24,11 @@ export default function ChairmanMessage() {
               <div className="w-10 h-10 bg-royal-100 rounded-xl flex items-center justify-center">
                 <HiChat className="w-5 h-5 text-royal-600" />
               </div>
-              <span className="text-royal-600 font-semibold text-sm tracking-wider uppercase">Chairman's Message</span>
+              <span className="text-royal-600 font-semibold text-sm tracking-wider uppercase">Secretary's Message</span>
             </div>
 
             <h2 className="text-3xl lg:text-4xl font-bold text-navy-800 mb-6 leading-tight">
-              A Message from Our <span className="gradient-text">Chairman</span>
+              A Message from Our <span className="gradient-text">Secretary</span>
             </h2>
 
             <div className="relative">
@@ -52,12 +52,12 @@ export default function ChairmanMessage() {
               <div className="w-px h-12 bg-royal-300"></div>
               <div>
                 <h4 className="text-lg font-bold text-navy-800">Er. Alok Ranjan Mallick</h4>
-                <p className="text-royal-600 text-sm font-semibold">Chairman, Meridian College</p>
+                <p className="text-royal-600 text-sm font-semibold">Secretary, Meridian College</p>
               </div>
             </div>
           </motion.div>
 
-          {/* Chairman Image / Avatar */}
+          {/* Secretary Image / Avatar */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -69,7 +69,7 @@ export default function ChairmanMessage() {
               <div className="w-64 h-80 lg:w-72 lg:h-96 rounded-3xl shadow-2xl shadow-navy-900/20 overflow-hidden border-4 border-white relative z-10">
                 <img
                   src={getImageUrl('meridian/chairman', { width: 600 })}
-                  alt="Er. Alok Ranjan Mallick - Chairman"
+                  alt="Er. Alok Ranjan Mallick - Secretary"
                   className="w-full h-full object-cover"
                   onError={(e) => {
                     console.error("Image failed to load:", e.target.src)

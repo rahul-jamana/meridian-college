@@ -60,8 +60,8 @@ const knowledgeBase = [
     answer: '🎭 **Cultural Activities:**\n\n• Annual Day celebration\n• Cultural festivals and programs\n• Farewell and fresher\'s parties\n• Debate and quiz competitions\n• Art and craft exhibitions\n• Yoga and meditation sessions\n\n**Cultural In-charge:** Mr. Avinash Lenka',
   },
   {
-    keywords: ['chairman', 'founder', 'management'],
-    answer: '👤 **Chairman:**\n\n**Er. Alok Ranjan Mallick**\nChairman, Meridian College\n\n"Education is not merely a destination—it is a lifelong journey of learning, growth, and transformation."',
+    keywords: ['secretary', 'founder', 'management'],
+    answer: '👤 **Secretary:**\n\n**Er. Alok Ranjan Mallick**\nSecretary, Meridian College\n\n"Education is not merely a destination—it is a lifelong journey of learning, growth, and transformation."',
   },
   {
     keywords: ['principal', 'head', 'director'],

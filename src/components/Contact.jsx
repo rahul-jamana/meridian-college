@@ -423,7 +423,7 @@ export default function Contact() {
                     +2 Science Admissions (CHSE)
                   </h4>
                   <p className="text-sm text-navy-600 mb-4">
-                    Admission into the +2 Science stream is completely merit-based and governed by the Directorate of Higher Education (DHE), Odisha. Here is what you need to do:
+                    Admission into the +2 Science subjects is completely merit-based and governed by the Directorate of Higher Education (DHE), Odisha. Here is what you need to do:
                   </p>
                   <ol className="list-decimal list-inside space-y-2 text-sm text-navy-700 mb-4">
                     <li>After your Class 10 results are declared, visit <strong>dheorissa.in</strong>.</li>

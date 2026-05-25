@@ -28,7 +28,7 @@ const directoryJsonLd = [
         {
           "@type": "Person",
           "name": "Er. Alok Ranjan Mallick",
-          "jobTitle": "Chairman",
+          "jobTitle": "Secretary",
           "worksFor": { "@type": "CollegeOrUniversity", "name": "Meridian College Bhubaneswar" }
         },
         {
@@ -48,8 +48,8 @@ export default function DirectoryPage() {
     <div className="min-h-screen bg-white overflow-x-hidden">
       <SEOHead
         title="College Directory | Management & Staff at Meridian College Bhubaneswar | Top College Odisha"
-        description="Official directory of Meridian College Bhubaneswar — contact Chairman Er. Alok Ranjan Mallick, Principal Mr. Debashish Panda, faculty members. Phone: 9437044215, 9777736396. One of the top private science colleges in Bhubaneswar, Odisha."
-        keywords="Meridian College directory, Meridian College principal, Meridian College chairman, college management Bhubaneswar, Meridian College staff, Meridian College contact, Alok Ranjan Mallick, Debashish Panda principal"
+        description="Official directory of Meridian College Bhubaneswar — contact Secretary Er. Alok Ranjan Mallick, Principal Mr. Debashish Panda, faculty members. Phone: 9437044215, 9777736396. One of the top private science colleges in Bhubaneswar, Odisha."
+        keywords="Meridian College directory, Meridian College principal, Meridian College secretary, college management Bhubaneswar, Meridian College staff, Meridian College contact, Alok Ranjan Mallick, Debashish Panda principal"
         path="/directory"
         jsonLd={directoryJsonLd}
       />
@@ -145,7 +145,7 @@ export default function DirectoryPage() {
               
               <div className="space-y-8 relative z-10">
                 <div className="bg-white/10 p-5 rounded-2xl border border-white/20 backdrop-blur-sm hover:bg-white/15 transition-all">
-                  <p className="text-royal-200 text-xs font-bold uppercase tracking-wider mb-1">Chairman</p>
+                  <p className="text-royal-200 text-xs font-bold uppercase tracking-wider mb-1">Secretary</p>
                   <h3 className="text-2xl font-bold mb-2">Er. Alok Ranjan Mallick</h3>
                   <p className="text-white/80 text-sm leading-relaxed">
                     Visionary leader of the Meridian Group, dedicated to bringing quality science education and modern infrastructure to the students of Odisha.

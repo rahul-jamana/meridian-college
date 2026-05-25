@@ -111,7 +111,7 @@ export const organizationSchema = {
   "founder": {
     "@type": "Person",
     "name": "Er. Alok Ranjan Mallick",
-    "jobTitle": "Chairman"
+    "jobTitle": "Secretary"
   },
   "address": {
     "@type": "PostalAddress",
