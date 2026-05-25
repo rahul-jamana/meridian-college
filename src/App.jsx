@@ -23,6 +23,7 @@ import ManageAlumni from './pages/admin/ManageAlumni.jsx'
 import ManageVision from './pages/admin/ManageVision.jsx'
 import ManageFees from './pages/admin/ManageFees.jsx'
 import Settings from './pages/admin/Settings.jsx'
+import ManageAdmissions from './pages/admin/ManageAdmissions.jsx'
 
 import AlumniPage from './pages/AlumniPage.jsx'
 import GalleryCategoryPage from './pages/GalleryCategoryPage.jsx'
@@ -58,6 +59,7 @@ function App() {
           <Route path="/admin/vision" element={<ManageVision />} />
           <Route path="/admin/fees" element={<ManageFees />} />
           <Route path="/admin/settings" element={<Settings />} />
+          <Route path="/admin/admissions" element={<ManageAdmissions />} />
         </Route>
       </Routes>
       <AdmissionPopup />

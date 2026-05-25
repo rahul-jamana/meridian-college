@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { updateCredentials } from '../../lib/auth';
 import { motion } from 'framer-motion';
-import { HiOutlineKey, HiOutlineCalendar } from 'react-icons/hi';
-import { getAcademicYear, saveAcademicYear } from '../../lib/db';
+import { HiOutlineKey } from 'react-icons/hi';
 
 export default function Settings() {
   const [newId, setNewId] = useState(localStorage.getItem('adminId') || 'meridin college');
@@ -10,25 +9,6 @@ export default function Settings() {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
-  const [academicYear, setAcademicYear] = useState('2026-27');
-  const [yearMessage, setYearMessage] = useState('');
-
-  useEffect(() => {
-    const load = async () => {
-      setAcademicYear(await getAcademicYear());
-    };
-    load();
-  }, []);
-
-  const handleSaveYear = async (e) => {
-    e.preventDefault();
-    setYearMessage('');
-    const success = await saveAcademicYear(academicYear);
-    if (success) {
-      setYearMessage('Academic year updated successfully!');
-      setTimeout(() => setYearMessage(''), 3000);
-    }
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -87,7 +67,7 @@ export default function Settings() {
                 type="text" 
                 value={newId}
                 onChange={(e) => setNewId(e.target.value)}
-                className="w-full px-4 py-3 rounded-xl border border-navy-200 focus:outline-none focus:ring-2 focus:ring-royal-500 bg-gray-50"
+                className="w-full px-4 py-3 rounded-xl border border-navy-200 focus:outline-none focus:ring-2 focus:ring-royal-500 bg-gray-50 text-navy-800"
                 required
               />
             </div>
@@ -100,7 +80,7 @@ export default function Settings() {
                 type="password" 
                 value={newPassword}
                 onChange={(e) => setNewPassword(e.target.value)}
-                className="w-full px-4 py-3 rounded-xl border border-navy-200 focus:outline-none focus:ring-2 focus:ring-royal-500 bg-gray-50"
+                className="w-full px-4 py-3 rounded-xl border border-navy-200 focus:outline-none focus:ring-2 focus:ring-royal-500 bg-gray-50 text-navy-800"
                 placeholder="Enter new password"
               />
             </div>
@@ -111,7 +91,7 @@ export default function Settings() {
                 type="password" 
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
-                className="w-full px-4 py-3 rounded-xl border border-navy-200 focus:outline-none focus:ring-2 focus:ring-royal-500 bg-gray-50"
+                className="w-full px-4 py-3 rounded-xl border border-navy-200 focus:outline-none focus:ring-2 focus:ring-royal-500 bg-gray-50 text-navy-800"
                 placeholder="Confirm new password"
               />
             </div>
@@ -121,50 +101,6 @@ export default function Settings() {
               className="w-full bg-royal-600 text-white font-bold py-3 rounded-xl hover:bg-royal-700 transition-colors shadow-md shadow-royal-600/20"
             >
               Save Changes
-            </button>
-          </form>
-        </div>
-      </motion.div>
-
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.1 }}
-        className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden mt-8"
-      >
-        <div className="p-6 bg-navy-50 border-b border-navy-100 flex items-center gap-3">
-          <HiOutlineCalendar className="w-6 h-6 text-navy-600" />
-          <h2 className="text-lg font-bold text-navy-900">Academic & Admission Year</h2>
-        </div>
-
-        <div className="p-8">
-          {yearMessage && (
-            <div className="mb-6 p-4 bg-green-50 text-green-700 rounded-xl text-sm font-medium border border-green-200">
-              ✅ {yearMessage}
-            </div>
-          )}
-
-          <form onSubmit={handleSaveYear} className="space-y-6 max-w-md">
-            <div>
-              <label className="block text-sm font-semibold text-navy-700 mb-2">Active Academic Year</label>
-              <input 
-                type="text" 
-                value={academicYear}
-                onChange={(e) => setAcademicYear(e.target.value)}
-                className="w-full px-4 py-3 rounded-xl border border-navy-200 focus:outline-none focus:ring-2 focus:ring-royal-500 bg-gray-50 font-bold text-navy-800"
-                placeholder="e.g. 2026-27 or 2026-2027"
-                required
-              />
-              <p className="text-xs text-navy-400 mt-2">
-                This updates all admission dates and banners dynamically across the homepage, headers, popups, fee structure page, and chatbot answers!
-              </p>
-            </div>
-
-            <button 
-              type="submit"
-              className="w-full bg-royal-600 text-white font-bold py-3 rounded-xl hover:bg-royal-700 transition-colors shadow-md shadow-royal-600/20"
-            >
-              Update Academic Year
             </button>
           </form>
         </div>

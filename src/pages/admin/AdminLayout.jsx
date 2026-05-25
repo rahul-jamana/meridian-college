@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Outlet, useNavigate, Link, useLocation } from 'react-router-dom';
 import { isAuthenticated, logout } from '../../lib/auth';
-import { HiOutlineChartPie, HiOutlineNewspaper, HiOutlinePhotograph, HiOutlineCog, HiOutlineLogout, HiOutlineInformationCircle, HiOutlineCreditCard, HiOutlineAcademicCap } from 'react-icons/hi';
+import { HiOutlineChartPie, HiOutlineNewspaper, HiOutlinePhotograph, HiOutlineCog, HiOutlineLogout, HiOutlineInformationCircle, HiOutlineCreditCard, HiOutlineAcademicCap, HiOutlineCalendar } from 'react-icons/hi';
 
 const navItems = [
   { name: 'Dashboard', path: '/admin/dashboard', icon: HiOutlineChartPie },
@@ -10,6 +10,7 @@ const navItems = [
   { name: 'Manage Alumni', path: '/admin/alumni', icon: HiOutlineAcademicCap },
   { name: 'Vision & Mission', path: '/admin/vision', icon: HiOutlineInformationCircle },
   { name: 'Fee Structure', path: '/admin/fees', icon: HiOutlineCreditCard },
+  { name: 'Admissions', path: '/admin/admissions', icon: HiOutlineCalendar },
   { name: 'Settings', path: '/admin/settings', icon: HiOutlineCog },
 ];
 
