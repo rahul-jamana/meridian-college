@@ -1,4 +1,4 @@
-import { DEFAULT_GALLERY, DEFAULT_HERO_MEDIA, DEFAULT_NEWS, DEFAULT_EVENTS, DEFAULT_ACHIEVERS, DEFAULT_VISION_MISSION, DEFAULT_FEES } from './defaultData'
+import { DEFAULT_GALLERY, DEFAULT_HERO_MEDIA, DEFAULT_NEWS, DEFAULT_EVENTS, DEFAULT_ACHIEVERS, DEFAULT_VISION_MISSION, DEFAULT_FEES, DEFAULT_ALUMNI_TESTIMONIALS } from './defaultData'
 import { getImageUrl } from './cloudinary'
 import { database, ref, set, get, child } from './firebase'
 
@@ -74,3 +74,7 @@ export const saveVisionMission = async (data) => await saveToDB('meridian_vision
 
 export const getFees = async () => await fetchFromDB('meridian_fees_v1', DEFAULT_FEES);
 export const saveFees = async (data) => await saveToDB('meridian_fees_v1', data);
+
+export const getAlumniTestimonials = async () => await fetchFromDB('meridian_alumni_testimonials_v1', DEFAULT_ALUMNI_TESTIMONIALS);
+export const saveAlumniTestimonials = async (testimonialsArray) => await saveToDB('meridian_alumni_testimonials_v1', testimonialsArray);
+

@@ -151,6 +151,11 @@ export default function ManageMedia() {
   const [galleryCategory, setGalleryCategory] = useState('Campus');
   const [homepageGalleryCategory, setHomepageGalleryCategory] = useState('Campus');
   const [aboutReady, setAboutReady] = useState('');
+  
+  // Custom image description titles
+  const [galleryTitle, setGalleryTitle] = useState('');
+  const [categoryTitle, setCategoryTitle] = useState('');
+  const [homepageGalleryTitle, setHomepageGalleryTitle] = useState('');
 
   useEffect(() => { const fetchData = async () => {
     setHeroItems(await getHeroMedia());
@@ -184,14 +189,14 @@ export default function ManageMedia() {
     saveHeroMedia(updated);
   };
 
-  /* ---- GALLERY ---- */
   const handleAddGallery = () => {
     if (!galleryReady.url) return alert('Please upload or paste an image URL first.');
-    const newItem = { id: Date.now().toString(), category: galleryCategory, url: galleryReady.url, type: 'image' };
+    const newItem = { id: Date.now().toString(), category: galleryCategory, title: galleryTitle, url: galleryReady.url, type: 'image' };
     const updated = [...galleryItems, newItem];
     setGalleryItems(updated);
     saveGallery(updated);
     setGalleryReady({ url: '', type: 'image' });
+    setGalleryTitle('');
     showMsg('Gallery photo added!');
   };
 
@@ -201,14 +206,14 @@ export default function ManageMedia() {
     saveGallery(updated);
   };
 
-  /* ---- HOMEPAGE GALLERY ---- */
   const handleAddHomepageGallery = () => {
     if (!homepageGalleryReady.url) return alert('Please upload or paste an image URL first.');
-    const newItem = { id: Date.now().toString(), category: homepageGalleryCategory, url: homepageGalleryReady.url, type: 'image' };
+    const newItem = { id: Date.now().toString(), category: homepageGalleryCategory, title: homepageGalleryTitle, url: homepageGalleryReady.url, type: 'image' };
     const updated = [...homepageGalleryItems, newItem];
     setHomepageGalleryItems(updated);
     saveHomepageGallery(updated);
     setHomepageGalleryReady({ url: '', type: 'image' });
+    setHomepageGalleryTitle('');
     showMsg('Main page gallery photo added!');
   };
 
@@ -260,9 +265,24 @@ export default function ManageMedia() {
     showMsg('Gallery heading and tagline updated!');
   };
 
+  const handleAddCategoryGallery = (customCategory) => {
+    if (!galleryReady.url) return alert('Please upload or paste an image URL first.');
+    const newItem = { id: Date.now().toString(), category: customCategory, title: categoryTitle, url: galleryReady.url, type: 'image' };
+    const updated = [...galleryItems, newItem];
+    setGalleryItems(updated);
+    saveGallery(updated);
+    setGalleryReady({ url: '', type: 'image' });
+    setCategoryTitle('');
+    showMsg(`${customCategory} photo added!`);
+  };
+
   const tabs = [
     { id: 'homepage-gallery', label: '🏠 Main Page Gallery' },
-    { id: 'gallery', label: '📸 Full Gallery (Normal)' },
+    { id: 'gallery-sports', label: '🏀 Sports Gallery' },
+    { id: 'gallery-festival', label: '🎪 Festival Gallery' },
+    { id: 'gallery-plantation', label: '🌱 Plantation Drive' },
+    { id: 'gallery-events', label: '📅 College Events' },
+    { id: 'gallery', label: '📸 Full Gallery (Other)' },
     { id: 'achievers', label: '🏆 Our Achievers' },
     { id: 'gallery-settings', label: '✏️ Gallery Settings' },
     { id: 'hero', label: '🖼️ Hero Backgrounds' },
@@ -330,7 +350,22 @@ export default function ManageMedia() {
                   <option value="Cultural">Cultural & Events</option>
                   <option value="Sports">Sports</option>
                   <option value="Hostel">Hostel</option>
+                  <option value="Festival">Festival Images</option>
+                  <option value="Plantation">Plantation Images</option>
+                  <option value="Events">College Events</option>
+                  <option value="Alumni">Alumni Memories</option>
                 </select>
+              </div>
+
+              <div>
+                <label className="block text-sm font-semibold text-navy-700 mb-1">Image Description / Caption</label>
+                <input
+                  type="text"
+                  value={homepageGalleryTitle}
+                  onChange={(e) => setHomepageGalleryTitle(e.target.value)}
+                  className="w-full px-4 py-2 rounded-xl border border-navy-200 focus:ring-2 focus:ring-royal-500 text-sm outline-none"
+                  placeholder="e.g. Students in uniform"
+                />
               </div>
 
               <UploadInput
@@ -360,6 +395,7 @@ export default function ManageMedia() {
                     <img src={item.url} className="w-full h-full object-cover" alt="Gallery" loading="lazy" />
                     <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center gap-2 p-3">
                       <span className="text-white text-xs font-bold bg-white/20 px-2 py-0.5 rounded-full">{item.category}</span>
+                      {item.title && <span className="text-white text-[10px] font-medium text-center line-clamp-2 px-1 max-w-full italic">"{item.title}"</span>}
                       <button
                         onClick={() => handleDeleteHomepageGallery(item.id)}
                         className="p-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors text-xs font-semibold flex items-center gap-1"
@@ -513,6 +549,105 @@ export default function ManageMedia() {
         </div>
       )}
 
+      {/* ===== SPECIFIC CATEGORIES ===== */}
+      {(activeTab === 'gallery-sports' || activeTab === 'gallery-festival' || activeTab === 'gallery-plantation' || activeTab === 'gallery-events') && (() => {
+        let cat = '';
+        let title = '';
+        let desc = '';
+        if (activeTab === 'gallery-sports') {
+          cat = 'Sports';
+          title = 'Sports Gallery';
+          desc = 'Images displayed under the dedicated Sports Gallery section.';
+        } else if (activeTab === 'gallery-festival') {
+          cat = 'Festival';
+          title = 'Festival Gallery';
+          desc = 'Images displayed under the dedicated Festival Gallery section.';
+        } else if (activeTab === 'gallery-plantation') {
+          cat = 'Plantation';
+          title = 'Plantation Drive';
+          desc = 'Images displayed under the dedicated Plantation Drive section.';
+        } else if (activeTab === 'gallery-events') {
+          cat = 'Events';
+          title = 'College Events';
+          desc = 'Images displayed under the dedicated College Events section.';
+        }
+
+        const filteredItems = galleryItems.filter(item => item.category && item.category.toLowerCase() === cat.toLowerCase());
+
+        return (
+          <div>
+            <div className="grid lg:grid-cols-3 gap-8 mb-10">
+              {/* Upload Panel */}
+              <div className="lg:col-span-1 bg-white p-6 rounded-2xl shadow-sm border border-gray-100 space-y-5">
+                <div>
+                  <h2 className="text-lg font-bold text-navy-900">Add to {title}</h2>
+                  <p className="text-xs text-navy-400 mt-0.5">{desc}</p>
+                </div>
+
+                <div className="p-3.5 bg-royal-50 rounded-xl border border-royal-100 text-xs font-semibold text-royal-700">
+                  📌 Category auto-tagged: <span className="underline font-bold">{cat}</span>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-semibold text-navy-700 mb-1">Image Description / Caption</label>
+                  <input
+                    type="text"
+                    value={categoryTitle}
+                    onChange={(e) => setCategoryTitle(e.target.value)}
+                    className="w-full px-4 py-2 rounded-xl border border-navy-200 focus:ring-2 focus:ring-royal-500 text-sm outline-none"
+                    placeholder={`e.g. Memory from ${title}`}
+                  />
+                </div>
+
+                <UploadInput
+                  label="Upload Image"
+                  onReady={(url, type) => setGalleryReady({ url, type })}
+                />
+
+                <button
+                  onClick={() => handleAddCategoryGallery(cat)}
+                  className="w-full bg-royal-600 text-white font-bold py-3 rounded-xl hover:bg-royal-700 transition-colors"
+                >
+                  + Add to {title}
+                </button>
+              </div>
+
+              {/* Gallery Grid */}
+              <div className="lg:col-span-2">
+                <p className="text-sm text-navy-500 mb-4 font-medium">{filteredItems.length} photos in {title}</p>
+                {filteredItems.length === 0 ? (
+                  <div className="text-center py-20 bg-white rounded-2xl border border-dashed border-gray-200 text-navy-400 text-sm">
+                    No photos uploaded in this sub-gallery yet. Use the upload panel to add some!
+                  </div>
+                ) : (
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 max-h-[600px] overflow-y-auto pr-1">
+                    {filteredItems.map((item) => (
+                      <motion.div
+                        key={item.id}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        className="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 relative group aspect-square"
+                      >
+                        <img src={item.url} className="w-full h-full object-cover" alt={title} loading="lazy" />
+                        <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center gap-2 p-3">
+                          {item.title && <span className="text-white text-[10px] font-medium text-center line-clamp-2 px-1 max-w-full italic">"{item.title}"</span>}
+                          <button
+                            onClick={() => handleDeleteGallery(item.id)}
+                            className="p-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors text-xs font-semibold flex items-center gap-1"
+                          >
+                            <HiOutlineTrash className="w-4 h-4" /> Remove
+                          </button>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        );
+      })()}
+
       {/* ===== FULL CAMPUS GALLERY ===== */}
       {activeTab === 'gallery' && (
         <div>
@@ -539,7 +674,22 @@ export default function ManageMedia() {
                   <option value="Cultural">Cultural & Events</option>
                   <option value="Sports">Sports</option>
                   <option value="Hostel">Hostel</option>
+                  <option value="Festival">Festival Images</option>
+                  <option value="Plantation">Plantation Images</option>
+                  <option value="Events">College Events</option>
+                  <option value="Alumni">Alumni Memories</option>
                 </select>
+              </div>
+
+              <div>
+                <label className="block text-sm font-semibold text-navy-700 mb-1">Image Description / Caption</label>
+                <input
+                  type="text"
+                  value={galleryTitle}
+                  onChange={(e) => setGalleryTitle(e.target.value)}
+                  className="w-full px-4 py-2 rounded-xl border border-navy-200 focus:ring-2 focus:ring-royal-500 text-sm outline-none"
+                  placeholder="e.g. Practical exam in lab"
+                />
               </div>
 
               <UploadInput
@@ -569,6 +719,7 @@ export default function ManageMedia() {
                     <img src={item.url} className="w-full h-full object-cover" alt="Gallery" loading="lazy" />
                     <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center gap-2 p-3">
                       <span className="text-white text-xs font-bold bg-white/20 px-2 py-0.5 rounded-full">{item.category}</span>
+                      {item.title && <span className="text-white text-[10px] font-medium text-center line-clamp-2 px-1 max-w-full italic">"{item.title}"</span>}
                       <button
                         onClick={() => handleDeleteGallery(item.id)}
                         className="p-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors text-xs font-semibold flex items-center gap-1"

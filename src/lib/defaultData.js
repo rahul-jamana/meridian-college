@@ -245,3 +245,28 @@ export const DEFAULT_FEES = [
     features: ['Expert Faculty', 'Modern Labs', 'Industrial Visits', 'Career Placement Cell']
   }
 ];
+
+export const DEFAULT_ALUMNI_TESTIMONIALS = [
+  {
+    id: 'a1',
+    name: 'Satyajit Patnaik',
+    batch: '+2 Science, Batch 2022',
+    feedback: 'Attending Meridian College was one of the best decisions of my academic life. The rigorous CHSE coaching along with specialized JEE preparation paved my way into NIT Rourkela. The supportive hostel environment felt just like home.',
+    url: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=400&auto=format&fit=crop'
+  },
+  {
+    id: 'a2',
+    name: 'Rupali Senapati',
+    batch: 'B.Sc. Chemistry, Batch 2023',
+    feedback: 'The practical exposure at Meridian is unmatched. The advanced chemistry laboratories and faculty mentoring helped me develop a deep research mindset. I was able to secure admission in IIT Kharagpur for my Master studies.',
+    url: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop'
+  },
+  {
+    id: 'a3',
+    name: 'Ashutosh Biswal',
+    batch: '+2 Science (PCB), Batch 2021',
+    feedback: 'The integrated coaching system at Meridian is top-notch. Regular mock tests, dedicated doubt-clearing sessions, and individual attention from teachers gave me the confidence to crack the NEET exam and join SCB Medical College.',
+    url: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop'
+  }
+];
+

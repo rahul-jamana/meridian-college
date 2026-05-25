@@ -19,9 +19,13 @@ import AdminLayout from './pages/admin/AdminLayout.jsx'
 import Dashboard from './pages/admin/Dashboard.jsx'
 import ManageNews from './pages/admin/ManageNews.jsx'
 import ManageMedia from './pages/admin/ManageMedia.jsx'
+import ManageAlumni from './pages/admin/ManageAlumni.jsx'
 import ManageVision from './pages/admin/ManageVision.jsx'
 import ManageFees from './pages/admin/ManageFees.jsx'
 import Settings from './pages/admin/Settings.jsx'
+
+import AlumniPage from './pages/AlumniPage.jsx'
+import GalleryCategoryPage from './pages/GalleryCategoryPage.jsx'
 
 function App() {
   return (
@@ -31,6 +35,11 @@ function App() {
         <Route path="/faculty" element={<FacultyPage />} />
         <Route path="/facilities" element={<FacilitiesPage />} />
         <Route path="/gallery" element={<GalleryPage />} />
+        <Route path="/gallery/sports" element={<GalleryCategoryPage category="Sports" title="Sports & Games" />} />
+        <Route path="/gallery/festival" element={<GalleryCategoryPage category="Festival" title="Festival & Cultural" />} />
+        <Route path="/gallery/plantation" element={<GalleryCategoryPage category="Plantation" title="Plantation Drive" />} />
+        <Route path="/gallery/events" element={<GalleryCategoryPage category="Events" title="College Events" />} />
+        <Route path="/alumni" element={<AlumniPage />} />
         <Route path="/achievers" element={<AchieversPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/vision-mission" element={<VisionMissionPage />} />
@@ -45,6 +54,7 @@ function App() {
           <Route path="/admin/dashboard" element={<Dashboard />} />
           <Route path="/admin/news" element={<ManageNews />} />
           <Route path="/admin/media" element={<ManageMedia />} />
+          <Route path="/admin/alumni" element={<ManageAlumni />} />
           <Route path="/admin/vision" element={<ManageVision />} />
           <Route path="/admin/fees" element={<ManageFees />} />
           <Route path="/admin/settings" element={<Settings />} />

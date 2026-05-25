@@ -43,6 +43,11 @@ const navLinks = [
     name: 'Gallery',
     dropdown: [
       { name: 'Photo Gallery', route: '/gallery' },
+      { name: 'Alumni Corner', route: '/alumni' },
+      { name: 'Sports Gallery', route: '/gallery/sports' },
+      { name: 'Festival Gallery', route: '/gallery/festival' },
+      { name: 'Plantation Drive', route: '/gallery/plantation' },
+      { name: 'College Events', route: '/gallery/events' },
       { name: 'Our Achievers', route: '/achievers' },
     ],
   },

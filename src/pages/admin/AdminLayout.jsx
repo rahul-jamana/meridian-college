@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
 import { Outlet, useNavigate, Link, useLocation } from 'react-router-dom';
 import { isAuthenticated, logout } from '../../lib/auth';
-import { HiOutlineChartPie, HiOutlineNewspaper, HiOutlinePhotograph, HiOutlineCog, HiOutlineLogout, HiOutlineInformationCircle, HiOutlineCreditCard } from 'react-icons/hi';
+import { HiOutlineChartPie, HiOutlineNewspaper, HiOutlinePhotograph, HiOutlineCog, HiOutlineLogout, HiOutlineInformationCircle, HiOutlineCreditCard, HiOutlineAcademicCap } from 'react-icons/hi';
 
 const navItems = [
   { name: 'Dashboard', path: '/admin/dashboard', icon: HiOutlineChartPie },
   { name: 'Latest News', path: '/admin/news', icon: HiOutlineNewspaper },
   { name: 'Manage Media', path: '/admin/media', icon: HiOutlinePhotograph },
+  { name: 'Manage Alumni', path: '/admin/alumni', icon: HiOutlineAcademicCap },
   { name: 'Vision & Mission', path: '/admin/vision', icon: HiOutlineInformationCircle },
   { name: 'Fee Structure', path: '/admin/fees', icon: HiOutlineCreditCard },
   { name: 'Settings', path: '/admin/settings', icon: HiOutlineCog },
