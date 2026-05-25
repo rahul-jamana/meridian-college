@@ -36,8 +36,12 @@ export default function Footer() {
           {/* College Info */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-5">
-              <div className="w-10 h-10 bg-gradient-to-br from-royal-500 to-royal-600 rounded-xl flex items-center justify-center text-white font-bold text-lg">
-                M
+              <div className="h-12 bg-white rounded-lg shadow-sm border border-navy-100/10 p-1 flex-shrink-0 flex items-center justify-center">
+                <img
+                  src="/logo.png"
+                  alt="Meridian College Logo"
+                  className="h-full w-auto object-contain"
+                />
               </div>
               <div>
                 <h3 className="text-white font-bold text-lg leading-tight">Meridian College</h3>

@@ -209,21 +209,11 @@ export default function Navbar() {
               }`}>
               <div className="h-14 sm:h-16 lg:h-[72px] bg-white rounded-xl shadow-md border-2 border-white p-1 flex-shrink-0 flex items-center justify-center">
                 <img
-                  src={getImageUrl('meridian/meridian_logo')}
+                  src="/logo.png"
                   alt="Meridian College Logo"
                   className="h-full w-auto object-contain"
                   style={{ display: 'block', background: '#fff' }}
-                  onError={(e) => {
-                    // Fallback to a secondary public ID if the first one fails
-                    if (e.target.src.includes('meridian_logo')) {
-                      e.target.src = getImageUrl('meridian/logo');
-                    } else {
-                      e.target.style.display = 'none';
-                      if (e.target.nextSibling) e.target.nextSibling.style.display = 'block';
-                    }
-                  }}
                 />
-                <span style={{ display: 'none', color: '#222', fontWeight: 'bold', fontSize: '12px' }}>Logo Not Found</span>
               </div>
               <div style={{ display: 'none' }} className={`font-bold text-lg ${(scrolled || isAlwaysSolid) ? 'text-navy-800' : 'text-white'}`}>
                 Meridian College
