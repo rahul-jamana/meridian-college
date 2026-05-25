@@ -129,8 +129,9 @@ export const organizationSchema = {
   "telephone": ["+91-9437044215", "+91-9777736396", "+91-9040799627"],
   "email": "principalmeridiancollege@gmail.com",
   "sameAs": [
-    "https://www.instagram.com/meridian_college_bhubaneswar",
-    "https://youtube.com/@meridiancollegebhubaneswar"
+    "https://www.instagram.com/meridian_college_bhubaneswar?igsh=bWJqa21zcm01YXZ4",
+    "https://www.youtube.com/@meridiancollegebhubaneswar",
+    "https://api.whatsapp.com/send/?phone=919040799627&text&type=phone_number&app_absent=0"
   ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
