@@ -1,9 +1,20 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { HiChat } from 'react-icons/hi'
 import { getImageUrl } from '../lib/cloudinary'
+import { getPrincipalImage } from '../lib/db'
 
 export default function PrincipalMessage() {
+  const [principalImg, setPrincipalImg] = useState('')
+
+  useEffect(() => {
+    const load = async () => {
+      const url = await getPrincipalImage()
+      setPrincipalImg(url)
+    }
+    load()
+  }, [])
+
   return (
     <section id="principal" className="relative py-20 lg:py-28 bg-white overflow-hidden">
       {/* Decorative */}
@@ -22,7 +33,7 @@ export default function PrincipalMessage() {
             <div className="relative">
               <div className="w-64 h-80 lg:w-72 lg:h-96 rounded-3xl shadow-2xl shadow-navy-900/20 overflow-hidden border-4 border-white relative z-10">
                 <img
-                  src={getImageUrl('meridian/principal', { width: 600 })}
+                  src={principalImg || getImageUrl('meridian/principal', { width: 600 })}
                   alt="Mr. Debashish Panda - Principal"
                   className="w-full h-full object-cover"
                   onError={(e) => {

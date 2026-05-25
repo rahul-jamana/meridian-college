@@ -1,9 +1,20 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { HiChat } from 'react-icons/hi'
 import { getImageUrl } from '../lib/cloudinary'
+import { getSecretaryImage } from '../lib/db'
 
 export default function SecretaryMessage() {
+  const [secretaryImg, setSecretaryImg] = useState('')
+
+  useEffect(() => {
+    const load = async () => {
+      const url = await getSecretaryImage()
+      setSecretaryImg(url)
+    }
+    load()
+  }, [])
+
   return (
     <section id="secretary" className="relative py-20 lg:py-28 bg-gradient-to-br from-navy-50/60 to-royal-50/30 overflow-hidden">
       {/* Decorative */}
@@ -68,7 +79,7 @@ export default function SecretaryMessage() {
             <div className="relative">
               <div className="w-64 h-80 lg:w-72 lg:h-96 rounded-3xl shadow-2xl shadow-navy-900/20 overflow-hidden border-4 border-white relative z-10">
                 <img
-                  src={getImageUrl('meridian/chairman', { width: 600 })}
+                  src={secretaryImg || getImageUrl('meridian/chairman', { width: 600 })}
                   alt="Er. Alok Ranjan Mallick - Secretary"
                   className="w-full h-full object-cover"
                   onError={(e) => {

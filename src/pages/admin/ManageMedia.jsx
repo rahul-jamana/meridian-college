@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { getHeroMedia, saveHeroMedia, getGallery, saveGallery, getAboutImage, saveAboutImage, getGallerySettings, saveGallerySettings, getHomepageGallery, saveHomepageGallery, getAchievers, saveAchievers, getAchieversSettings, saveAchieversSettings } from '../../lib/db';
+import { getHeroMedia, saveHeroMedia, getGallery, saveGallery, getAboutImage, saveAboutImage, getGallerySettings, saveGallerySettings, getHomepageGallery, saveHomepageGallery, getAchievers, saveAchievers, getAchieversSettings, saveAchieversSettings, getSecretaryImage, saveSecretaryImage, getPrincipalImage, savePrincipalImage } from '../../lib/db';
 import { uploadToCloudinary } from '../../lib/cloudinary';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HiOutlineTrash, HiOutlinePhotograph, HiOutlineLink, HiUpload } from 'react-icons/hi';
@@ -135,6 +135,8 @@ export default function ManageMedia() {
   const [homepageGalleryItems, setHomepageGalleryItems] = useState([]);
   const [achievers, setAchievers] = useState([]);
   const [aboutImg, setAboutImg] = useState('');
+  const [secretaryImg, setSecretaryImg] = useState('');
+  const [principalImg, setPrincipalImg] = useState('');
   const [message, setMessage] = useState('');
   const [gallerySettings, setGallerySettings] = useState({ label: 'Campus Life', heading: 'Campus Gallery', tagline: 'Real moments from Meridian College — our students, faculty, labs, and events' });
   const [achieversSettings, setAchieversSettings] = useState({ label: 'Student Success', heading: 'Our Achievers', tagline: 'Celebrating the outstanding accomplishments of Meridian students.' });
@@ -151,6 +153,8 @@ export default function ManageMedia() {
   const [galleryCategory, setGalleryCategory] = useState('Campus');
   const [homepageGalleryCategory, setHomepageGalleryCategory] = useState('Campus');
   const [aboutReady, setAboutReady] = useState('');
+  const [secretaryReady, setSecretaryReady] = useState('');
+  const [principalReady, setPrincipalReady] = useState('');
   
   // Custom image description titles
   const [galleryTitle, setGalleryTitle] = useState('');
@@ -163,6 +167,8 @@ export default function ManageMedia() {
     setHomepageGalleryItems(await getHomepageGallery());
     setAchievers(await getAchievers());
     setAboutImg(await getAboutImage());
+    setSecretaryImg(await getSecretaryImage());
+    setPrincipalImg(await getPrincipalImage());
     setGallerySettings(await getGallerySettings());
     setAchieversSettings(await getAchieversSettings());
   }; fetchData(); }, []);
@@ -259,6 +265,24 @@ export default function ManageMedia() {
     showMsg('About section image updated!');
   };
 
+  /* ---- SECRETARY IMAGE ---- */
+  const handleSaveSecretary = () => {
+    if (!secretaryReady) return alert('Please upload or paste an image URL first.');
+    saveSecretaryImage(secretaryReady);
+    setSecretaryImg(secretaryReady);
+    setSecretaryReady('');
+    showMsg('Secretary section image updated!');
+  };
+
+  /* ---- PRINCIPAL IMAGE ---- */
+  const handleSavePrincipal = () => {
+    if (!principalReady) return alert('Please upload or paste an image URL first.');
+    savePrincipalImage(principalReady);
+    setPrincipalImg(principalReady);
+    setPrincipalReady('');
+    showMsg('Principal section image updated!');
+  };
+
   const handleSaveGallerySettings = (e) => {
     e.preventDefault();
     saveGallerySettings(gallerySettings);
@@ -287,6 +311,8 @@ export default function ManageMedia() {
     { id: 'gallery-settings', label: '✏️ Gallery Settings' },
     { id: 'hero', label: '🖼️ Hero Backgrounds' },
     { id: 'about', label: '🏫 About Image' },
+    { id: 'secretary', label: '👤 Secretary Image' },
+    { id: 'principal', label: '👨‍🏫 Principal Image' },
   ];
 
   return (
@@ -936,6 +962,76 @@ export default function ManageMedia() {
             <h3 className="text-sm font-bold text-navy-700 mb-3">Current Image on Website</h3>
             {aboutImg ? (
               <img src={aboutImg} alt="About section" className="w-full h-72 object-cover rounded-xl" />
+            ) : (
+              <div className="w-full h-72 bg-gray-100 rounded-xl flex items-center justify-center text-navy-400 text-sm">
+                No image set
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* ===== SECRETARY IMAGE ===== */}
+      {activeTab === 'secretary' && (
+        <div className="grid lg:grid-cols-2 gap-8">
+          <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 space-y-5">
+            <div>
+              <h2 className="text-lg font-bold text-navy-900">Secretary Image</h2>
+              <p className="text-sm text-navy-500">This image appears in the <strong>Secretary's Message</strong> section on the main homepage.</p>
+            </div>
+
+            <UploadInput
+              label="Secretary Image"
+              onReady={(url) => setSecretaryReady(url)}
+            />
+
+            <button
+              onClick={handleSaveSecretary}
+              className="w-full bg-royal-600 text-white font-bold py-3 rounded-xl hover:bg-royal-700 transition-colors"
+            >
+              Update Secretary Image
+            </button>
+          </div>
+
+          <div className="bg-white p-4 rounded-2xl shadow-sm border border-gray-100">
+            <h3 className="text-sm font-bold text-navy-700 mb-3">Current Image on Website</h3>
+            {secretaryImg ? (
+              <img src={secretaryImg} alt="Secretary" className="w-full h-72 object-cover rounded-xl" />
+            ) : (
+              <div className="w-full h-72 bg-gray-100 rounded-xl flex items-center justify-center text-navy-400 text-sm">
+                No image set
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* ===== PRINCIPAL IMAGE ===== */}
+      {activeTab === 'principal' && (
+        <div className="grid lg:grid-cols-2 gap-8">
+          <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 space-y-5">
+            <div>
+              <h2 className="text-lg font-bold text-navy-900">Principal Image</h2>
+              <p className="text-sm text-navy-500">This image appears in the <strong>Principal's Message</strong> section on the main homepage.</p>
+            </div>
+
+            <UploadInput
+              label="Principal Image"
+              onReady={(url) => setPrincipalReady(url)}
+            />
+
+            <button
+              onClick={handleSavePrincipal}
+              className="w-full bg-royal-600 text-white font-bold py-3 rounded-xl hover:bg-royal-700 transition-colors"
+            >
+              Update Principal Image
+            </button>
+          </div>
+
+          <div className="bg-white p-4 rounded-2xl shadow-sm border border-gray-100">
+            <h3 className="text-sm font-bold text-navy-700 mb-3">Current Image on Website</h3>
+            {principalImg ? (
+              <img src={principalImg} alt="Principal" className="w-full h-72 object-cover rounded-xl" />
             ) : (
               <div className="w-full h-72 bg-gray-100 rounded-xl flex items-center justify-center text-navy-400 text-sm">
                 No image set

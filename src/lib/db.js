@@ -78,3 +78,11 @@ export const saveFees = async (data) => await saveToDB('meridian_fees_v1', data)
 export const getAlumniTestimonials = async () => await fetchFromDB('meridian_alumni_testimonials_v1', DEFAULT_ALUMNI_TESTIMONIALS);
 export const saveAlumniTestimonials = async (testimonialsArray) => await saveToDB('meridian_alumni_testimonials_v1', testimonialsArray);
 
+const DEFAULT_SECRETARY_IMAGE = getImageUrl('meridian/chairman', { width: 600 });
+export const getSecretaryImage = async () => await fetchFromDB('meridian_secretary_image_v1', DEFAULT_SECRETARY_IMAGE);
+export const saveSecretaryImage = async (url) => await saveToDB('meridian_secretary_image_v1', url);
+
+const DEFAULT_PRINCIPAL_IMAGE = getImageUrl('meridian/principal', { width: 600 });
+export const getPrincipalImage = async () => await fetchFromDB('meridian_principal_image_v1', DEFAULT_PRINCIPAL_IMAGE);
+export const savePrincipalImage = async (url) => await saveToDB('meridian_principal_image_v1', url);
+
