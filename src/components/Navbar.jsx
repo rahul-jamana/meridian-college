@@ -131,6 +131,7 @@ export default function Navbar() {
   const [mobileDropdown, setMobileDropdown] = useState(null)
   const dropdownRef = useRef(null)
   const location = useLocation()
+  const isAlwaysSolid = location.pathname === '/admission'
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50)
@@ -160,8 +161,8 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
-          ? 'bg-white/95 backdrop-blur-lg shadow-lg shadow-navy-900/5'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${(scrolled || isAlwaysSolid)
+          ? 'bg-white/95 backdrop-blur-lg shadow-lg shadow-navy-900/5 border-b border-navy-100/40'
           : 'bg-transparent'
         }`}
     >
@@ -204,7 +205,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group" onClick={() => window.scrollTo(0, 0)}>
-            <div className={`flex items-center justify-center transition-all duration-300 ${scrolled ? 'scale-100' : 'scale-105'
+            <div className={`flex items-center justify-center transition-all duration-300 ${(scrolled || isAlwaysSolid) ? 'scale-100' : 'scale-105'
               }`}>
               <div className="h-14 sm:h-16 lg:h-[72px] bg-white rounded-xl shadow-md border-2 border-white p-1 flex-shrink-0 flex items-center justify-center">
                 <img
@@ -224,7 +225,7 @@ export default function Navbar() {
                 />
                 <span style={{ display: 'none', color: '#222', fontWeight: 'bold', fontSize: '12px' }}>Logo Not Found</span>
               </div>
-              <div style={{ display: 'none' }} className={`font-bold text-lg ${scrolled ? 'text-navy-800' : 'text-white'}`}>
+              <div style={{ display: 'none' }} className={`font-bold text-lg ${(scrolled || isAlwaysSolid) ? 'text-navy-800' : 'text-white'}`}>
                 Meridian College
               </div>
             </div>
@@ -244,7 +245,7 @@ export default function Navbar() {
                         onClick={() => setOpenDropdown(openDropdown === link.name ? null : link.name)}
                         className={`flex items-center gap-1 px-4 py-2 rounded-lg text-sm transition-all duration-300 hover:bg-royal-50 ${isDropdownActive
                             ? 'text-royal-600 font-bold bg-royal-50/80'
-                            : scrolled
+                            : (scrolled || isAlwaysSolid)
                               ? 'text-navy-700 font-medium hover:text-royal-600'
                               : 'text-white/90 font-medium hover:text-white hover:bg-white/10'
                           }`}
@@ -284,7 +285,7 @@ export default function Navbar() {
                       link={link}
                       className={`px-4 py-2 rounded-lg text-sm transition-all duration-300 hover:bg-royal-50 ${isLinkActive
                           ? 'text-royal-600 font-bold bg-royal-50/80'
-                          : scrolled
+                          : (scrolled || isAlwaysSolid)
                             ? 'text-navy-700 font-medium hover:text-royal-600'
                             : 'text-white/90 font-medium hover:text-white hover:bg-white/10'
                         }`}
@@ -302,7 +303,7 @@ export default function Navbar() {
           {/* Mobile Toggle */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className={`lg:hidden p-2 rounded-xl transition-colors ${scrolled ? 'text-navy-800 hover:bg-navy-50' : 'text-white hover:bg-white/10'
+            className={`lg:hidden p-2 rounded-xl transition-colors ${(scrolled || isAlwaysSolid) ? 'text-navy-800 hover:bg-navy-50' : 'text-white hover:bg-white/10'
               }`}
             aria-label="Toggle menu"
           >
