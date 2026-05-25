@@ -184,10 +184,10 @@ export default function Navbar() {
                 <a href="https://www.instagram.com/meridian_college_bhubaneswar?igsh=bWJqa21zcm01YXZ4" target="_blank" rel="noopener noreferrer" className="hover:text-gold-400 transition-colors">
                   <FaInstagram className="w-4 h-4" />
                 </a>
-                <a href="https://www.youtube.com/@meridiancollegebhubaneswar" target="_blank" rel="noopener noreferrer" className="hover:text-gold-400 transition-colors">
+                <a href="https://youtube.com/@meridiancollegebhubaneswar?si=Dl_eOViOciSbfJIq" target="_blank" rel="noopener noreferrer" className="hover:text-gold-400 transition-colors">
                   <FaYoutube className="w-4 h-4" />
                 </a>
-                <a href="https://api.whatsapp.com/send/?phone=919040799627&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" className="hover:text-gold-400 transition-colors">
+                <a href="https://wa.me/919040799627" target="_blank" rel="noopener noreferrer" className="hover:text-gold-400 transition-colors">
                   <FaWhatsapp className="w-4 h-4" />
                 </a>
               </div>

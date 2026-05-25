@@ -23,8 +23,8 @@ const programmes = [
 const socialLinks = [
   { icon: FaFacebookF, href: '#', label: 'Facebook' },
   { icon: FaInstagram, href: 'https://www.instagram.com/meridian_college_bhubaneswar?igsh=bWJqa21zcm01YXZ4', label: 'Instagram' },
-  { icon: FaYoutube, href: 'https://www.youtube.com/@meridiancollegebhubaneswar', label: 'YouTube' },
-  { icon: FaWhatsapp, href: 'https://api.whatsapp.com/send/?phone=919040799627&text&type=phone_number&app_absent=0', label: 'WhatsApp' },
+  { icon: FaYoutube, href: 'https://youtube.com/@meridiancollegebhubaneswar?si=Dl_eOViOciSbfJIq', label: 'YouTube' },
+  { icon: FaWhatsapp, href: 'https://wa.me/919040799627', label: 'WhatsApp' },
 ]
 
 export default function Footer() {

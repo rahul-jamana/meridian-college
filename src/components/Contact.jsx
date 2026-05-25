@@ -36,8 +36,8 @@ const contactInfo = [
     title: 'Social Media',
     lines: [
       { label: 'Instagram', url: 'https://www.instagram.com/meridian_college_bhubaneswar?igsh=bWJqa21zcm01YXZ4', icon: FaInstagram },
-      { label: 'YouTube', url: 'https://www.youtube.com/@meridiancollegebhubaneswar', icon: FaYoutube },
-      { label: 'WhatsApp', url: 'https://api.whatsapp.com/send/?phone=919040799627&text&type=phone_number&app_absent=0', icon: FaWhatsapp },
+      { label: 'YouTube', url: 'https://youtube.com/@meridiancollegebhubaneswar?si=Dl_eOViOciSbfJIq', icon: FaYoutube },
+      { label: 'WhatsApp', url: 'https://wa.me/919040799627', icon: FaWhatsapp },
     ],
     isSocial: true,
   },
