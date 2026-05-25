@@ -53,7 +53,7 @@ export default function ContactPage() {
       <SEOHead
         title="Contact Meridian College Bhubaneswar | Admission Enquiry | Top College in Odisha"
         description="Contact Meridian College Bhubaneswar for admission enquiries 2026-27. Call 9437044215 or visit our campus at Bhatkhuri, Gangapada. One of the top private science colleges in Bhubaneswar, Odisha. Admission helpdesk for +2 Science & +3 Science Honours."
-        keywords="contact Meridian College, Meridian College phone number, Meridian College address, admission enquiry Bhubaneswar, college admission helpdesk Odisha, Meridian College Gangapada, visit college campus Bhubaneswar, top college admission 2026 Odisha"
+        keywords="contact meridian college bhubaneswar?, meridian college phone number?, meridian college address?, admission enquiry bhubaneswar?, principal debashish panda contact?, contact Meridian College, Meridian College phone number, Meridian College address, admission enquiry Bhubaneswar, college admission helpdesk Odisha, Meridian College Gangapada, visit college campus Bhubaneswar, top college admission 2026 Odisha"
         path="/contact"
         jsonLd={contactJsonLd}
       />

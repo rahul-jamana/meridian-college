@@ -49,7 +49,7 @@ export default function DirectoryPage() {
       <SEOHead
         title="College Directory | Management & Staff at Meridian College Bhubaneswar | Top College Odisha"
         description="Official directory of Meridian College Bhubaneswar — contact Secretary Er. Alok Ranjan Mallick, Principal Mr. Debashish Panda, faculty members. Phone: 9437044215, 9777736396. One of the top private science colleges in Bhubaneswar, Odisha."
-        keywords="Meridian College directory, Meridian College principal, Meridian College secretary, college management Bhubaneswar, Meridian College staff, Meridian College contact, Alok Ranjan Mallick, Debashish Panda principal"
+        keywords="meridian college phone number?, contact meridian college bhubaneswar?, meridian college admission helpline?, principal debashish panda contact?, Meridian College directory, Meridian College principal, Meridian College secretary, college management Bhubaneswar, Meridian College staff, Meridian College contact, Alok Ranjan Mallick, Debashish Panda principal"
         path="/directory"
         jsonLd={directoryJsonLd}
       />

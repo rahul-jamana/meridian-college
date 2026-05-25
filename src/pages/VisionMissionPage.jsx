@@ -28,7 +28,7 @@ export default function VisionMissionPage() {
       <SEOHead
         title="Vision & Mission | Meridian College Bhubaneswar | Top Science College in Odisha"
         description="Discover the vision and mission of Meridian College Bhubaneswar — one of the top private science colleges in Odisha. Our student-first approach, academic excellence focus, and holistic development philosophy make us the best choice for +2 Science & +3 Science education in Bhubaneswar."
-        keywords="Meridian College vision mission, college philosophy Bhubaneswar, student development Odisha, academic excellence Bhubaneswar, best college values Odisha, Meridian College approach, holistic education Bhubaneswar"
+        keywords="meridian college vision mission?, college philosophy bhubaneswar?, student development odisha?, academic excellence bhubaneswar?, meridian college approach?, Meridian College vision mission, college philosophy Bhubaneswar, student development Odisha, academic excellence Bhubaneswar, best college values Odisha, Meridian College approach, holistic education Bhubaneswar"
         path="/vision-mission"
         jsonLd={visionJsonLd}
       />

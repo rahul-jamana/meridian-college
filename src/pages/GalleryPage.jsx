@@ -37,7 +37,7 @@ export default function GalleryPage() {
       <SEOHead
         title="Campus Gallery | Photos & Videos of Meridian College Bhubaneswar | Top College Odisha"
         description="View 82+ real photos and videos of Meridian College Bhubaneswar campus. See our smart classrooms, science labs, hostel facilities, sports events, cultural programmes, and student life. One of the top private science colleges in Bhubaneswar, Odisha."
-        keywords="Meridian College photos, Meridian College gallery, Bhubaneswar college campus photos, college life Bhubaneswar, top college campus Odisha, Meridian College campus, science college photos Bhubaneswar, student life Odisha college"
+        keywords="meridian college photos?, meridian college gallery?, bhubaneswar college campus photos?, college life bhubaneswar?, science college photos bhubaneswar?, Meridian College photos, Meridian College gallery, Bhubaneswar college campus photos, college life Bhubaneswar, top college campus Odisha, Meridian College campus, science college photos Bhubaneswar, student life Odisha college"
         path="/gallery"
         jsonLd={galleryJsonLd}
       />

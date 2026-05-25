@@ -27,7 +27,7 @@ export default function FacilitiesPage() {
       <SEOHead
         title="Facilities | Smart Classrooms, Labs & Hostels at Meridian College Bhubaneswar"
         description="Explore world-class facilities at Meridian College Bhubaneswar — one of the top private science colleges in Odisha. Smart classrooms with digital boards, well-equipped physics, chemistry & biology labs, computer lab, library, separate boys & girls hostels, sports ground, transportation, and canteen. Best infrastructure among Bhubaneswar colleges."
-        keywords="Meridian College facilities, smart classroom Bhubaneswar, science lab college Odisha, hostel facility Bhubaneswar college, best infrastructure college Bhubaneswar, computer lab college Odisha, college with hostel Bhubaneswar, top facilities private college Odisha, college library Bhubaneswar, college sports ground Odisha"
+        keywords="meridian college hostel facility?, transport bus routes meridian college?, science laboratories meridian college?, smart classrooms bbsr college?, Meridian College facilities, smart classroom Bhubaneswar, science lab college Odisha, hostel facility Bhubaneswar college, best infrastructure college Bhubaneswar, computer lab college Odisha, college with hostel Bhubaneswar, top facilities private college Odisha, college library Bhubaneswar, college sports ground Odisha"
         path="/facilities"
         jsonLd={facilitiesJsonLd}
       />

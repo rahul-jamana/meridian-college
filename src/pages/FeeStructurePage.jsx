@@ -32,7 +32,7 @@ export default function FeeStructurePage() {
       <SEOHead
         title="Fee Structure 2026-27 | Meridian College Bhubaneswar | Affordable Top College Odisha"
         description="Check the transparent fee structure of Meridian College Bhubaneswar for +2 Science (PCM, PCB) and +3 Science Honours (B.Sc.) programmes 2026-27. Affordable fees at one of the top private science colleges in Odisha. CHSE & Utkal University affiliated."
-        keywords="Meridian College fees, fee structure Bhubaneswar college, +2 science fees Odisha, +3 BSc fees Bhubaneswar, affordable college Odisha, college fees 2026 Bhubaneswar, Meridian College fee structure, private college fees Odisha"
+        keywords="what is the fee structure of meridian college bhubaneswar?, affordable science college fees bhubaneswar?, hostal charges meridian college?, plus two college fees odisha?, Meridian College fees, fee structure Bhubaneswar college, +2 science fees Odisha, +3 BSc fees Bhubaneswar, affordable college Odisha, college fees 2026 Bhubaneswar, Meridian College fee structure, private college fees Odisha"
         path="/fees"
         jsonLd={feeJsonLd}
       />

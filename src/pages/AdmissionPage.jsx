@@ -86,7 +86,7 @@ export default function AdmissionPage() {
       <SEOHead
         title="Admission Enquiry | Meridian College Bhubaneswar"
         description="Direct admission enquiry form for Meridian College. Apply for +2 Science (PCM, PCB) and +3 Science Honours. Get guidance from our admission counselors."
-        keywords="admission Meridian College, Meridian College admission form, direct admission Bhubaneswar, apply college online Odisha"
+        keywords="how to apply for admission in meridian college?, +2 science admissions bhubaneswar 2026?, degree college admission odisha?, meridian college online enquiry form?, admission Meridian College, Meridian College admission form, direct admission Bhubaneswar, apply college online Odisha"
         path="/admission"
         jsonLd={admissionJsonLd}
       />

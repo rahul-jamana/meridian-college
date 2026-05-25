@@ -26,7 +26,7 @@ export default function FacultyPage() {
       <SEOHead
         title="Faculty | Experienced Teachers at Meridian College Bhubaneswar | Top College Odisha"
         description="Meet the highly qualified faculty of Meridian College Bhubaneswar — one of the top science colleges in Odisha. Our 15+ experienced professors with Ph.D, M.Phil & M.Sc qualifications provide expert teaching in Physics, Chemistry, Mathematics, Biology & Computer Science. Best faculty in Bhubaneswar private colleges."
-        keywords="Meridian College faculty, best teachers Bhubaneswar college, experienced science faculty Odisha, PhD professors Bhubaneswar, top college teachers Odisha, Meridian College professors, science teachers Bhubaneswar"
+        keywords="lecturers in meridian college bhubaneswar?, best biology teacher bhubaneswar?, mathematics faculty meridian college?, HODs utkal university degree college?, Meridian College faculty, best teachers Bhubaneswar college, experienced science faculty Odisha, PhD professors Bhubaneswar, top college teachers Odisha, Meridian College professors, science teachers Bhubaneswar"
         path="/faculty"
         jsonLd={facultyJsonLd}
       />

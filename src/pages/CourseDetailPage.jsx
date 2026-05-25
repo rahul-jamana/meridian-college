@@ -25,7 +25,7 @@ export default function CourseDetailPage() {
 
   const seoTitle = `${course.title} | ${course.programme} at Meridian College Bhubaneswar | Top College Odisha`
   const seoDesc = `${course.title} (${course.programme}) at Meridian College Bhubaneswar — ${course.badge} affiliated. ${course.duration}, ${course.seats} seats. ${course.description.slice(0, 150)}... One of the top private science colleges in Odisha.`
-  const seoKeywords = `${course.title} Bhubaneswar, ${course.programme} Odisha, ${course.badge} college, ${course.title} admission 2026, best ${course.programme} college Bhubaneswar, ${course.title} Meridian College`
+  const seoKeywords = `what is the syllabus of ${course.title}?, career options after ${course.title}?, admission eligibility for ${course.title} at meridian college?, best college for ${course.title} in bhubaneswar?, ${course.title} Bhubaneswar, ${course.programme} Odisha, ${course.badge} college, ${course.title} admission 2026, best ${course.programme} college Bhubaneswar, ${course.title} Meridian College`
 
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">

@@ -37,7 +37,7 @@ export default function AchieversPage() {
       <SEOHead
         title="Student Achievers | Toppers at Meridian College Bhubaneswar | Best College Odisha"
         description="Outstanding achievements of Meridian College Bhubaneswar students. Top results in CHSE board exams, JEE, NEET. One of the top 10 science colleges in Odisha."
-        keywords="Meridian College toppers, student achievements Bhubaneswar, best results college Odisha, CHSE toppers, JEE NEET results Meridian"
+        keywords="meridian college toppers?, student achievements bhubaneswar?, best results college odisha?, CHSE toppers odisha?, JEE NEET results meridian college?, Meridian College toppers, student achievements Bhubaneswar, best results college Odisha, CHSE toppers, JEE NEET results Meridian"
         path="/achievers"
         jsonLd={achieversJsonLd}
       />

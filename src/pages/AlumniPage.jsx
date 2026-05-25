@@ -62,7 +62,7 @@ export default function AlumniPage() {
       <SEOHead
         title="Alumni Corner & Student Feedback | Meridian College Bhubaneswar"
         description="Discover feedback and success reviews from Meridian College alumni. Explore how our graduates cracked JEE/NEET and got placed in IITs, NITs, and medical colleges."
-        keywords="Meridian College alumni, student feedback Bhubaneswar, college reviews Odisha, Meridian student success stories"
+        keywords="meridian college alumni reviews?, success stories meridian college?, JEE selections meridian college?, student testimonials bbsr college?, Meridian College alumni, student feedback Bhubaneswar, college reviews Odisha, Meridian student success stories"
         path="/alumni"
         jsonLd={alumniSchema}
       />

@@ -57,7 +57,7 @@ export default function GalleryCategoryPage({ category, title }) {
       <SEOHead
         title={`${title} Gallery | Meridian College Bhubaneswar | Campus Life`}
         description={`View real campus photos and moments of ${title} at Meridian College Bhubaneswar. Smart classrooms, labs, and student activities in Odisha.`}
-        keywords={`Meridian College ${category}, Meridian College ${title}, Bhubaneswar college photos, campus life`}
+        keywords={`meridian college ${category} event?, meridian college photos?, what is campus life like at meridian college?, Meridian College ${category}, Meridian College ${title}, Bhubaneswar college photos, campus life`}
         path={`/gallery/${category.toLowerCase()}`}
         jsonLd={schemaJson}
       />
